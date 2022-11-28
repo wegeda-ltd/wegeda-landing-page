@@ -35,7 +35,7 @@ function Main() {
   const openFaq = (question) => {
     setCurrFaq(question.toLowerCase());
 
-    if (showFaq == false) {
+    if (showFaq === false) {
       setShowFaq(true);
     } else {
       setShowFaq(false);
@@ -73,7 +73,6 @@ function Main() {
 
   // document.body.style.zoom = "80%";
 
-  const initialValue = document.body.style.zoom;
   // Change zoom level on mount
 
   document.body.style.zoom = zoom + "%";
@@ -94,59 +93,66 @@ function Main() {
       //   position: showModal ? "relative" : "fixed",
       // }}
       >
-        <div class="nav-container">
-          <img src="/images/wegedaLogo.png" alt="" class="nav-logo" />
-          <button class="nav-download-btn" onClick={() => setShowModal(true)}>
+        <div className="nav-container">
+          <img src="/images/wegedaLogo.png" alt="" className="nav-logo" />
+          <button
+            className="nav-download-btn"
+            onClick={() => setShowModal(true)}
+          >
             Join Waitlist
           </button>
         </div>
       </nav>
 
-      <div class="main-content">
-        <div class="hero">
-          <div class="hero-left">
+      <div className="main-content">
+        <div className="hero">
+          <div className="hero-left">
             <span>Find your next</span>
             <h1>Housemate</h1>
-            <img src="/images/heroTextUnderline.png" alt="" class="underline" />
+            <img
+              src="/images/heroTextUnderline.png"
+              alt=""
+              className="underline"
+            />
 
-            <div class="hero-cta">
+            <div className="hero-cta">
               <a href="/#">
-                <img src="/images/appstore.png" />
+                <img src="/images/appstore.png" alt="" />
               </a>
               <a href="/#">
-                <img src="/images/playstore.png" />
+                <img src="/images/playstore.png" alt="" />
               </a>
             </div>
           </div>
-          <div class="hero-right">
-            <div class="girl-persona-cont">
-              <div class="persona-border">
+          <div className="hero-right">
+            <div className="girl-persona-cont">
+              <div className="persona-border">
                 <img
                   src="/images/girlPersona.png"
                   alt=""
-                  class="girl-persona-img"
+                  className="girl-persona-img"
                 />
               </div>
             </div>
             <img
               src="/images/girlToBoyArrow.png"
               alt=""
-              class="girl-to-boy-arrow"
+              className="girl-to-boy-arrow"
             />
-            <div class="boy-persona-cont">
-              <div class="boy-persona-border">
+            <div className="boy-persona-cont">
+              <div className="boy-persona-border">
                 <img
                   src="/images/boyPersona.png"
                   alt=""
-                  class="boy-persona-img"
+                  className="boy-persona-img"
                 />
               </div>
             </div>
           </div>
         </div>
 
-        <div class="chat-n-meet-cont">
-          <div class="chat-n-meet">
+        <div className="chat-n-meet-cont">
+          <div className="chat-n-meet">
             <h2>
               Search, Chat & Meet <br />
               with Housemates
@@ -157,14 +163,14 @@ function Main() {
             </p>
           </div>
 
-          <div class="chat-n-meet-descs">
-            <div class="chat-n-meet-desc">
+          <div className="chat-n-meet-descs">
+            <div className="chat-n-meet-desc">
               <img
                 src="/images/ftpf_icon.png"
                 alt=""
-                class="chat-n-meet-desc-icon"
+                className="chat-n-meet-desc-icon"
               />
-              <div class="chat-n-meet-desc-txt">
+              <div className="chat-n-meet-desc-txt">
                 <h1>Find the perfect fit</h1>
                 <span>
                   Get recommendations for housemates who fits your personality,
@@ -172,26 +178,26 @@ function Main() {
                 </span>
               </div>
             </div>
-            <div class="chat-n-meet-desc">
+            <div className="chat-n-meet-desc">
               <img
                 src="/images/hmnb_icon.png"
                 alt=""
-                class="chat-n-meet-desc-icon"
+                className="chat-n-meet-desc-icon"
               />
-              <div class="chat-n-meet-desc-txt">
+              <div className="chat-n-meet-desc-txt">
                 <h1>Housemates nearby</h1>
                 <span>
                   Search for available houses or housemates around you
                 </span>
               </div>
             </div>
-            <div class="chat-n-meet-desc">
+            <div className="chat-n-meet-desc">
               <img
                 src="/images/eyar_icon.png"
                 alt=""
-                class="chat-n-meet-desc-icon"
+                className="chat-n-meet-desc-icon"
               />
-              <div class="chat-n-meet-desc-txt">
+              <div className="chat-n-meet-desc-txt">
                 <h1>Enlist your available rooms</h1>
                 <span>
                   Share your available room with the community to find your next
@@ -199,13 +205,13 @@ function Main() {
                 </span>
               </div>
             </div>
-            <div class="chat-n-meet-desc">
+            <div className="chat-n-meet-desc">
               <img
                 src="/images/im_icon.png"
                 alt=""
-                class="chat-n-meet-desc-icon"
+                className="chat-n-meet-desc-icon"
               />
-              <div class="chat-n-meet-desc-txt">
+              <div className="chat-n-meet-desc-txt">
                 <h1>Instant messages</h1>
                 <span>
                   Send and receive messages from interested housemates
@@ -214,40 +220,40 @@ function Main() {
             </div>
           </div>
 
-          <div class="download-to-device">
-            <div class="left">
+          <div className="download-to-device">
+            <div className="left">
               <h2>Download to your device</h2>
-              <div class="dwnload-cta">
+              <div className="dwnload-cta">
                 <a href="/#">
-                  <img src="/images/appstore.png" />
+                  <img src="/images/appstore.png" alt="" />
                 </a>
-                <a href="/#" class="playstore">
-                  <img src="/images/playstore.png" />
+                <a href="/#" className="playstore">
+                  <img src="/images/playstore.png" alt="" />
                 </a>
               </div>
             </div>
 
-            <div class="right">
+            <div className="right">
               <img src="/images/wegedaIconBlack.png" alt="wegeda logo" />
             </div>
           </div>
 
-          <div class="live-the-life">
-            <div class="live-the-life-img">
-              <img src="/images/mobile-phone.png" />
+          <div className="live-the-life">
+            <div className="live-the-life-img">
+              <img src="/images/mobile-phone.png" alt="" />
             </div>
-            <div class="live-the-life-txt">
-              <h1 class="big">
+            <div className="live-the-life-txt">
+              <h1 className="big">
                 Live the life <br />
                 you deserve
               </h1>
-              <h1 class="small">Live the life you deserve</h1>
-              <p class="big">
+              <h1 className="small">Live the life you deserve</h1>
+              <p className="big">
                 Find your next roommate from a community of trustworthy &
                 verified house owners & house seekers. Get recommendations
                 tailored to your preference.
               </p>
-              <p class="small">
+              <p className="small">
                 Find your next roommate from a community of trustworthy &
                 verified house owners & house seekers. Get recommendations
                 tailored to your preference.
@@ -255,12 +261,12 @@ function Main() {
             </div>
           </div>
 
-          <div class="faqs">
+          <div className="faqs">
             <h3>Frequently Asked Questions(FAQ)</h3>
 
             {FAQ.map((faq, index) => (
               <div
-                class={`faq ${
+                className={`faq ${
                   showFaq &&
                   currFaq.toLowerCase().includes(faq.question.toLowerCase())
                     ? "faq-body-show-cont"
@@ -269,9 +275,10 @@ function Main() {
                 key={index}
                 onClick={() => openFaq(faq.question)}
               >
-                <div class="faq-header">
+                <div className="faq-header">
                   <h3>{faq.question}</h3>
                   <img
+                    alt=""
                     src={`${
                       showFaq &&
                       currFaq.toLowerCase().includes(faq.question.toLowerCase())
@@ -290,7 +297,7 @@ function Main() {
                   />
                 </div>
                 <div
-                  class={`${
+                  className={`${
                     showFaq &&
                     currFaq.toLowerCase().includes(faq.question.toLowerCase())
                       ? "faq-body-show"
@@ -317,9 +324,9 @@ function Main() {
       </div>
 
       <footer>
-        <div class="contact-us">
+        <div className="contact-us">
           <span>Contact Us</span>
-          <div class="social-icons">
+          <div className="social-icons">
             <a href="/#">
               <img src="/images/twitterIcon.png" alt="twitter" />
             </a>
@@ -334,10 +341,14 @@ function Main() {
           </div>
         </div>
 
-        <div class="footer-items">
-          <img src="/images/wegedaLogo.png" alt="logo" class="footer-logo" />
+        <div className="footer-items">
+          <img
+            src="/images/wegedaLogo.png"
+            alt="logo"
+            className="footer-logo"
+          />
 
-          <div class="policy">
+          <div className="policy">
             <a href="/#">Privacy Policy</a>
             <a href="/#">Terms of use</a>
           </div>

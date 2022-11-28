@@ -3,7 +3,7 @@ import "./modal.css";
 function Modal({ width, height, setShowModal }) {
   return (
     <div
-      class="modal-cont"
+      className="modal-cont"
       style={{
         width: width,
         minHeight: height * 2,
@@ -21,7 +21,7 @@ function Modal({ width, height, setShowModal }) {
       }}
     >
       <div
-        class="modal"
+        className="modal"
         style={{
           width: "80%",
           marginTop: "2%",
@@ -31,7 +31,7 @@ function Modal({ width, height, setShowModal }) {
           position: "relative",
         }}
       >
-        <button class="close_btn" onClick={() => setShowModal(false)}>
+        <button className="close_btn" onClick={() => setShowModal(false)}>
           x
         </button>
         <div
@@ -44,7 +44,7 @@ function Modal({ width, height, setShowModal }) {
           }}
         >
           <div
-            className="modal-header"
+            classNameName="modal-header"
             style={{
               display: "flex",
               flexDirection: "column",
@@ -55,6 +55,7 @@ function Modal({ width, height, setShowModal }) {
           >
             <img
               src="/images/wegeda_modal.png"
+              alt=""
               style={{
                 width: "40%",
                 objectFit: "contain",
@@ -73,7 +74,7 @@ function Modal({ width, height, setShowModal }) {
             </h4>
           </div>
           <div
-            class="modal-body"
+            className="modal-body"
             style={{
               textAlign: "center",
               fontSize: "35px",
@@ -99,10 +100,10 @@ function Modal({ width, height, setShowModal }) {
               personality preferences, interests and have complimentary budgets.
             </p>
 
-            <button class="cont_btn">Continue to form</button>
+            <button className="cont_btn">Continue to form</button>
           </div>
           <div
-            class="modal-footer"
+            className="modal-footer"
             style={{
               marginBottom: "-5%",
               width: "110%",
@@ -113,6 +114,7 @@ function Modal({ width, height, setShowModal }) {
           >
             <img
               src="/images/modal_bottom.png"
+              alt=""
               style={{
                 width: "110%",
               }}
