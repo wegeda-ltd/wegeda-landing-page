@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import Main from "./components/main/main";
 
 function App() {
