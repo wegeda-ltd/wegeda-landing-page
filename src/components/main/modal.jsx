@@ -63,7 +63,7 @@ function Modal({ width, height, setShowModal }) {
             />
             <h4
               style={{
-                marginTop: "-10px",
+                marginTop: "10px",
                 fontSize: "30px",
                 fontWeight: "bold",
                 color: "#CF0058",
