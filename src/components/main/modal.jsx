@@ -55,7 +55,7 @@ function Modal({ width, height, setShowModal }) {
           >
             <img
               src="/images/wegeda_modal.png"
-              alt=""
+              alt="logo"
               style={{
                 width: "40%",
                 objectFit: "contain",
