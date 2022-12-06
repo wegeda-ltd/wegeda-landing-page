@@ -1,7 +1,7 @@
 import React from "react";
 import "./modal.css";
 import { motion } from "framer-motion";
-function Form({ setShowForm }) {
+function Form({ setShowModal }) {
   let dimensions = {
     width: window.innerWidth,
     height: window.innerHeight,
@@ -73,7 +73,7 @@ function Form({ setShowForm }) {
     >
       <button
         className="close_btn"
-        onClick={() => setShowForm(false)}
+        onClick={() => setShowModal(false)}
         style={{
           marginTop: "10px",
           border: "2px solid black",

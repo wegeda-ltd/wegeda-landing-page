@@ -25,7 +25,7 @@ function Modal({ width, height, setShowModal }) {
       }}
     >
       {showForm ? (
-        <Form setShowForm={setShowForm} />
+        <Form setShowForm={setShowModal} />
       ) : (
         <motion.div
           initial="hidden"
