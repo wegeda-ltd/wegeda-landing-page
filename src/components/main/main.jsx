@@ -82,11 +82,13 @@ function Main() {
 
   return (
     <div>
-      <Modal
-        width={showModal ? "100%" : 0}
-        height={showModal ? height : 0}
-        setShowModal={setShowModal}
-      />
+      {showModal && (
+        <Modal
+          width={showModal ? "100%" : 0}
+          height={showModal ? height : 0}
+          setShowModal={setShowModal}
+        />
+      )}
 
       <nav
       // style={{

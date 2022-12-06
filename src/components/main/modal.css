@@ -1,5 +1,4 @@
 .modal-cont {
-    transition: all 0.5s ease-in-out;
     background: #3333333c;
 }
 
@@ -34,6 +33,21 @@
     outline: none;
 }
 
+
+.modal-header>h4 {
+    margin-top: 10px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #CF0058;
+    text-align: center,
+}
+
+.modal-header>p {
+    font-size: 20px;
+    text-align: center,
+}
+
+
 .cont_btn {
     margin-top: 50px;
     margin-bottom: 80px;
@@ -56,6 +70,71 @@
     outline: none;
 }
 
+
+
+form {
+
+    margin-top: 40px;
+    padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    display: flex;
+
+    width: 90%;
+    justify-content: space-between;
+
+
+}
+
+
+
+.input-group {
+    align-self: center;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 70px;
+    margin-bottom: 20px;
+
+}
+
+
+
+
+
+.input-group>input,
+.input-group>select,
+textarea {
+    min-width: 50%;
+    margin-top: 10px;
+    height: 40px;
+    padding: 0 10px;
+    display: block;
+}
+
+.input-group>select>option {
+    padding: 0 5px;
+}
+
+form>button {
+    cursor: pointer;
+    border: 1.5px solid gray;
+    border-radius: 10px;
+    width: 110px;
+    height: 44px;
+    font-weight: bold;
+    align-self: center;
+    background-color: white;
+    margin-top: 50px;
+}
+
+form>button:active {
+    background-color: rgb(229, 228, 228);
+
+}
 
 @media only screen and (max-width: 600px) {
     .modal {
@@ -80,6 +159,11 @@
     .modal-header>h4 {
         margin-top: 10px !important;
         font-size: 20px !important;
+    }
+
+    .modal-header>p {
+        font-size: 16px !important;
+        text-align: center;
     }
 
     .modal-body {
