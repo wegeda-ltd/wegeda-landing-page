@@ -179,7 +179,7 @@ function Form({ setShowModal }) {
               <option disabled>Select</option>
               <option>Male</option>
               <option>Female</option>
-              <option>Prefer not to say</option>
+              <option>Prefer not to say.</option>
             </select>
           </div>
         </div>
