@@ -68,12 +68,18 @@ function Form({ setShowForm }) {
         padding: "20px",
         marginTop: "20px",
         maxWidth: "85%",
+        position: "relative",
       }}
     >
       <button
         className="close_btn"
         onClick={() => setShowForm(false)}
-        style={{ marginTop: "10px", borderColor: "black", color: "black" }}
+        style={{
+          marginTop: "10px",
+          border: "2px solid black",
+          color: "black",
+          background: "white",
+        }}
       >
         x
       </button>
