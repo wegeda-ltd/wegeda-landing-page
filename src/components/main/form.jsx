@@ -174,14 +174,12 @@ function Form({ setShowModal }) {
             />
           </div>
           <div className="input-group">
-            <label htmlFor="option">Select an Option</label>
+            <label htmlFor="option">Gender</label>
             <select id="option" name="option" style={{ width: "108%" }}>
-              <option>Select</option>
-              <option>Option 1</option>
-              <option>Option 2</option>
-              <option>Option 3</option>
-              <option>Option 4</option>
-              <option>Option 5</option>
+              <option disabled>Select</option>
+              <option>Male</option>
+              <option>Female</option>
+              <option>Prefer not to say</option>
             </select>
           </div>
         </div>
