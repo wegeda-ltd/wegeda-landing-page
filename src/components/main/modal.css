@@ -114,6 +114,7 @@ textarea {
     height: 40px;
     padding: 0 10px;
     display: block;
+    align-self:flex-end;
 }
 
 .input-group>select>option {
