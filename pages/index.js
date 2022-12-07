@@ -1,14 +1,16 @@
-import React from "react";
-import "./main.css";
-import Modal from "./modal";
+import React, { useEffect } from "react";
+import Modal from "../components/modal";
+import { motion } from "framer-motion";
+import { init } from "ityped";
+import Head from "next/head";
 
-function Main() {
+function Page() {
   const [showFaq, setShowFaq] = React.useState(false);
   const [showModal, setShowModal] = React.useState(false);
   const [currFaq, setCurrFaq] = React.useState("What is Wegeda");
+  const [showFlag, setShowFlag] = React.useState(false);
   let maxWidth = 1920;
-  const height = window.innerHeight;
-
+  let height;
   const FAQ = [
     {
       question: "What is Wegeda?",
@@ -32,6 +34,16 @@ function Main() {
     },
   ];
 
+  const textRef = React.useRef();
+
+  useEffect(() => {
+    init(textRef.current, {
+      showCursor: false,
+      backDelay: 2000,
+      backSpeed: 60,
+      strings: ["Housemates", "Roommates", "House to Rent", "Room to Rent"],
+    });
+  }, []);
   const openFaq = (question) => {
     setCurrFaq(question.toLowerCase());
 
@@ -43,45 +55,60 @@ function Main() {
   };
 
   const maxPercentage = 100;
-  let dimensions = {
-    width: window.innerWidth,
-    height: window.innerHeight,
-  };
 
-  let zoom =
-    dimensions.width > 600
-      ? (dimensions.width * maxPercentage) / maxWidth
-      : 100;
+  if (typeof window !== "undefined") {
+    height = window.innerHeight;
 
-  function handleResize() {
-    dimensions.height = window.innerHeight;
-    dimensions.width = window.innerWidth;
+    let dimensions = {
+      width: window.innerWidth,
+      height: window.innerHeight,
+    };
 
-    zoom =
+    let zoom =
       dimensions.width > 600
         ? (dimensions.width * maxPercentage) / maxWidth
         : 100;
 
-    console.log(
-      dimensions.height,
-      dimensions.height * (100 / zoom),
-      zoom,
-      "zoom ooo"
-    );
+    function handleResize() {
+      dimensions.height = window.innerHeight;
+      dimensions.width = window.innerWidth;
+
+      zoom =
+        dimensions.width > 600
+          ? (dimensions.width * maxPercentage) / maxWidth
+          : 100;
+
+      document.body.style.zoom = zoom + "%";
+    }
+
+    // document.body.style.zoom = "80%";
+
+    // Change zoom level on mount
+
     document.body.style.zoom = zoom + "%";
+
+    //change dimension on page resize
+    window.addEventListener("resize", handleResize);
   }
-
-  // document.body.style.zoom = "80%";
-
-  // Change zoom level on mount
-
-  document.body.style.zoom = zoom + "%";
-
-  //change dimension on page resize
-  window.addEventListener("resize", handleResize);
-
   return (
     <div>
+      <Head>
+        <link rel="shortcut icon" href="/images/favicon.ico" />
+        <meta property="og:image" content="/images/wegeda.png" />
+        <meta property="og:url" content="https://wegeda.app" />
+        <meta property="og:title" content="Wegeda" />
+        <meta
+          property="og:description"
+          content="Find rooms and verified roommates across Nigeria."
+        />
+        <meta
+          name="description"
+          content="Find rooms and verified roommates across Nigeria."
+        />
+
+        <meta property="og:type" content="website" />
+      </Head>
+
       {showModal && (
         <Modal
           width={showModal ? "100%" : 0}
@@ -97,20 +124,83 @@ function Main() {
       >
         <div className="nav-container">
           <img src="/images/wegedaLogo.png" alt="" className="nav-logo" />
-          <button
-            className="nav-download-btn"
-            onClick={() => setShowModal(true)}
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+            }}
           >
-            Join Waitlist
-          </button>
+            <button
+              className="nav-download-btn"
+              onClick={() => setShowModal(true)}
+            >
+              Join Waitlist
+            </button>
+            <img
+              src="/images/flag.jpeg"
+              className="flag"
+              style={{
+                cursor: "pointer",
+              }}
+              onMouseOver={() => setShowFlag(true)}
+              onMouseLeave={() => setShowFlag(false)}
+            />
+          </div>
         </div>
       </nav>
 
+      {showFlag && (
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={{
+            hidden: {
+              scale: 0.1,
+              opacity: 0,
+              transition: {
+                delay: 0.001,
+              },
+            },
+            visible: {
+              scale: 1,
+              opacity: 1,
+              transition: {
+                delay: 0.001,
+              },
+            },
+          }}
+          style={{
+            position: "absolute",
+            top: 150,
+            zIndex: 1000000000000000,
+            right: 15,
+            width: "300px",
+            background: "#fff",
+            borderRadius: "10px",
+            padding: "18px",
+            boxShadow: "2px 3px 15px rgba(34, 34, 34, 0.3)",
+            display: "flex",
+            alignItems: "center",
+          }}
+        >
+          <img src="/images/flag.jpeg" className="flag" />
+          <h3
+            style={{
+              fontSize: "34px",
+              fontWeight: "bold",
+              marginLeft: "20px",
+            }}
+          >
+            Nigeria
+          </h3>
+        </motion.div>
+      )}
       <div className="main-content">
         <div className="hero">
           <div className="hero-left">
             <span>Find your next</span>
-            <h1>Housemate</h1>
+            <h1 ref={textRef}></h1>
             <img
               src="/images/heroTextUnderline.png"
               alt=""
@@ -360,4 +450,4 @@ function Main() {
   );
 }
 
-export default Main;
+export default Page;

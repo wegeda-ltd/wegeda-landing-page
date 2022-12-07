@@ -1,5 +1,4 @@
 import React from "react";
-import "./modal.css";
 import { motion } from "framer-motion";
 import Form from "./form";
 function Modal({ width, height, setShowModal }) {

@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+
+.success-cont {
+  background-color: rgba(255, 255, 255, 0.751);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.success {
+  margin-top: -10%;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.success-img-cont {
+  background-color: rgb(5, 172, 5);
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.success-img {
+  width: 90px;
+  object-fit: contain;
+}
+
+.success-text {
+  margin-top: -1px;
+  font-size: 25px;
+  color: #155906;
+  font-weight: 700;
+}
