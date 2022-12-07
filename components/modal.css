@@ -85,6 +85,7 @@ form {
 
     width: 90%;
     justify-content: space-between;
+    align-items:center;
 
 
 }
@@ -113,6 +114,7 @@ textarea {
     height: 40px;
     padding: 0 10px;
     display: block;
+    justify-self:flex-end;
 }
 
 .input-group>select>option {
