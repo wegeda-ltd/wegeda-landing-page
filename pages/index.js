@@ -44,6 +44,13 @@ function Page() {
       strings: ["Housemates", "Roommates", "House to Rent", "Room to Rent"],
     });
   }, []);
+
+  useEffect(() => {
+    console.log(textRef.current.innerHtml, "TEXT REF");
+    console.log(textRef.current.text, "TEXT REF");
+    console.log(textRef.current, "TEXT REF");
+  }, [textRef.current]);
+
   const openFaq = (question) => {
     setCurrFaq(question.toLowerCase());
 
@@ -80,10 +87,6 @@ function Page() {
 
       document.body.style.zoom = zoom + "%";
     }
-
-    // document.body.style.zoom = "80%";
-
-    // Change zoom level on mount
 
     document.body.style.zoom = zoom + "%";
 
@@ -201,11 +204,11 @@ function Page() {
           <div className="hero-left">
             <span>Find your next</span>
             <h1 ref={textRef}></h1>
-            <img
+            {/* <img
               src="/images/heroTextUnderline.png"
               alt=""
               className="underline"
-            />
+            /> */}
 
             <div className="hero-cta">
               <a href="/#">

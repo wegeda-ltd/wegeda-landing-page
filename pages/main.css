@@ -26,7 +26,7 @@ nav {
 
 .flag {
     width: 60px;
-    height: 50px;
+    height: 40px;
     border-radius: 6px;
     margin-left: 15px;
 }
@@ -82,7 +82,9 @@ nav {
 }
 
 .hero-left {
-    flex: 1;
+    width: 45%;
+    overflow-x: hidden;
+    max-width: 45%;
     padding: 400px 0px 3% 7%;
     padding-bottom: 1200px;
 }
@@ -96,10 +98,14 @@ nav {
     font-weight: 900;
     color: #A60046;
     font-size: 110px;
+    width: 80%;
     margin-right: 50px;
     z-index: 20;
     margin-bottom: -25px;
     position: relative;
+    background-image: url('/images/heroTextUnderline.png');
+    background-repeat: no-repeat;
+    background-position: 0 110%;
 }
 
 .hero-left>.underline {
@@ -125,7 +131,8 @@ nav {
 .hero-right {
     padding-bottom: 800px;
     position: relative;
-    flex: 2;
+    /* flex: 2; */
+    min-width: 55%;
     display: flex;
     padding: 30px;
     padding-top: 130px;
@@ -493,8 +500,7 @@ footer {
     }
 
     .flag {
-        width: 40px;
-        height: 30px;
+        display: none;
     }
 
     .hero {
@@ -506,9 +512,10 @@ footer {
     .hero-left {
         flex: 1;
         padding: 60px 60px 1% 6%;
-        width: 80%;
+        overflow-x: visible;
+        align-self: flex-start;
 
-        background-image: unset;
+
     }
 
     .hero-left>span {
@@ -524,6 +531,8 @@ footer {
         margin-left: 0;
         margin-bottom: -25px;
         position: relative;
+        min-width: 200%;
+        background-image: unset;
     }
 
     .hero-left>.underline {
@@ -535,6 +544,7 @@ footer {
     }
 
     .hero-right {
+        flex: 2;
         margin-right: 0;
         margin-top: 50px;
         width: 100%;
