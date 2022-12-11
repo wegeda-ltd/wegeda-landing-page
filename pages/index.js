@@ -110,6 +110,7 @@ function Page() {
         />
 
         <meta property="og:type" content="website" />
+        <title>Wegeda </title>
       </Head>
 
       {showModal && (
