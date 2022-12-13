@@ -127,7 +127,6 @@ function Form({ setShowModal }) {
     //change dimension on page resize
     window.addEventListener("resize", handleResize);
   }
-  let zoom = 100;
 
   const YEARS = ["2022", "2023", "2024", "2025", "2026", "2027", "2028"];
   const MONTHS = [

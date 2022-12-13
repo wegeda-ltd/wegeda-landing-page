@@ -3,8 +3,10 @@ import Modal from "../components/modal";
 import { motion } from "framer-motion";
 import { init } from "ityped";
 import Head from "next/head";
-
+import { useRouter } from "next/router";
 function Page() {
+  const router = useRouter();
+
   const [showFaq, setShowFaq] = React.useState(false);
   const [showModal, setShowModal] = React.useState(false);
   const [currFaq, setCurrFaq] = React.useState("What is Wegeda");
@@ -137,7 +139,11 @@ function Page() {
           >
             <button
               className="nav-download-btn"
-              onClick={() => setShowModal(true)}
+              onClick={() =>
+                router.push(
+                  "blogs/how-to-rent-choice-apartments-in-lagos-hotspots-without-bursting-your-wallet"
+                )
+              }
             >
               Join Waitlist
             </button>
