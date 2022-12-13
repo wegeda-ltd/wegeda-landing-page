@@ -111,6 +111,11 @@ function Page() {
           content="Find rooms and verified roommates across Nigeria."
         />
 
+        <meta
+          name="keywords"
+          content="Rent, Roommates, Rent anywhere in lagos, find verified roommate, cheap houses, cheap rent"
+        ></meta>
+
         <meta property="og:type" content="website" />
         <title>Wegeda </title>
       </Head>
