@@ -47,6 +47,10 @@ function HowToRent() {
         />
 
         <meta property="og:type" content="website" />
+        <meta
+          name="keywords"
+          content="Rent, Roommates, Rent anywhere in lagos, find verified roommate, cheap houses, cheap rent"
+        ></meta>
         <title>
           Wegeda - How To Rent Choice Apartments In Lagos Hot Spots Without
           Bursting Your Wallet
