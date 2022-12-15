@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 function Form() {
   const router = useRouter();
@@ -39,7 +40,7 @@ function Form() {
         setYear("");
         setOtherInfo("");
         router.push("/");
-      }, 5000);
+      }, 10000);
     }
   }, [success]);
 
@@ -407,9 +408,12 @@ function Form() {
                   value={gender}
                   onChange={(e) => setGender(e.target.value)}
                 >
+                  <option value={""}>---Select One---</option>
                   {["Male", "Female", "Prefer not to say"].map(
                     (gender, index) => (
-                      <option key={index}>{gender}</option>
+                      <option key={index} value={gender}>
+                        {gender}
+                      </option>
                     )
                   )}
                 </select>
