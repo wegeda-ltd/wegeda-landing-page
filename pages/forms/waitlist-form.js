@@ -6,7 +6,7 @@ import Link from "next/link";
 function Form() {
   const router = useRouter();
 
-  const [occupation, setOccupation] = useState("Occupation 1");
+  const [occupation, setOccupation] = useState("");
   const [email, setEmail] = useState("");
   const [company, setCompany] = useState("");
   const [first_name, setFirstName] = useState("");
@@ -40,7 +40,7 @@ function Form() {
         setYear("");
         setOtherInfo("");
         router.push("/");
-      }, 10000);
+      }, 3000);
     }
   }, [success]);
 
@@ -125,8 +125,6 @@ function Form() {
 
     document.body.style.zoom = 100 + "%";
 
-    console.log(document.body.style.zoom);
-
     //change dimension on page resize
     window.addEventListener("resize", handleResize);
   }
@@ -186,7 +184,7 @@ function Form() {
           >
             <div className="success-img-cont">
               <img
-                alt="success-img"
+                alt="error img"
                 src="/images/error.png"
                 className="success-img"
               />
@@ -199,8 +197,8 @@ function Form() {
       ) : success ? (
         <motion.div
           className="success-cont"
-          initial="visible"
-          animate="hidden"
+          initial="hidden"
+          animate="visible"
           variants={{
             hidden: {
               opacity: 0,
@@ -232,15 +230,15 @@ function Form() {
               },
             }}
           >
-            <div className="success-img-cont">
+            <div className="success-img-cont success-wrapper">
               <img
                 alt="success-img"
-                src="/images/success.png"
-                className="success-img"
+                src="/images/success.jpeg"
+                className="success-img success-image"
               />
             </div>
             <p className="success-text">Successful!</p>
-            <Link href="/">Go to Home</Link>
+            <Link href="/">Redirecting to Home...</Link>
           </motion.div>
         </motion.div>
       ) : (
@@ -292,12 +290,12 @@ function Form() {
               Dear friend, <br />
               Thank you for your interest in Wegeda.
               <br />
-              Right now, we’re conducting tests on our app and working to
-              provide a base level of apartment listings for you to find when we
-              launch in January 2023.
+              Right now, we’re conducting tests on our app and are working to
+              provide a base level of apartment listings for you to find from
+              when we launch in January 2023.
               <br />
-              If you are looking to rent a place within the timeframe, you
-              wouldn’t want to miss out on the updates.
+              If you are looking to rent a place within now and the end of
+              January 2023, you wouldn’t want to miss out on the updates.
               <br />
               Kindly fill the form below so you receive every information
               important for you, including the early listings.
@@ -408,7 +406,7 @@ function Form() {
                   value={gender}
                   onChange={(e) => setGender(e.target.value)}
                 >
-                  <option value={""}>---Select One---</option>
+                  <option value={""}>--Select One--</option>
                   {["Male", "Female", "Prefer not to say"].map(
                     (gender, index) => (
                       <option key={index} value={gender}>
@@ -422,13 +420,13 @@ function Form() {
 
             <div className="form-group">
               <div className="input-group">
-                <label htmlFor="name">Current Address</label>
+                <label htmlFor="current-address">Current Address</label>
                 <input
                   value={current_address}
                   onChange={(e) => setCurrentAddress(e.target.value)}
                   required
-                  id="name"
-                  name="name"
+                  id="current-address"
+                  name="current-address"
                   type="text"
                   style={{ width: "100%" }}
                 />

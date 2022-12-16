@@ -31,19 +31,19 @@
 
 .success>a {
   text-decoration: none;
-  box-shadow: 0px 3px 1px #39001876;
+  /* box-shadow: 0px 3px 1px #39001876; */
   margin-top: 20px;
-  background-color: #A60046;
+  /* background-color: #A60046; */
   align-self: center;
-  color: #fff;
-  padding: 18px;
-  border-radius: 10px;
+  color: #A60046;
+  /* padding: 18px; */
+  /* border-radius: 10px; */
 }
 
 
 .success>a:active {
   box-shadow: 0px 0px 0px #a600455c;
-  background-color: #a60045d5;
+  color: #a60045d5;
 }
 
 
@@ -55,6 +55,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.success-wrapper {
+  background-color: rgb(255, 255, 255) !important;
+  border: 1px solid rgb(5, 172, 5);
+  box-shadow: 0px 1px 2px 5px #13d55725;
+
 }
 
 .success-img {
