@@ -215,12 +215,22 @@ function Page() {
         <div className="hero">
           <div className="hero-left">
             <span>Find your next</span>
-            <h1 ref={textRef}></h1>
-            {/* <img
+            <h1>
+              <span
+                style={{
+                  fontSize: "2px",
+                  marginRight: "-20px",
+                }}
+              >
+                |
+              </span>{" "}
+              <span ref={textRef}></span>
+            </h1>
+            <img
               src="/images/heroTextUnderline.png"
               alt=""
               className="underline"
-            /> */}
+            />
 
             <div className="hero-cta">
               <a href="/#">
@@ -434,15 +444,27 @@ function Page() {
         <div className="contact-us">
           <span>Contact Us</span>
           <div className="social-icons">
-            <a href="/#">
+            <a
+              href="https://twitter.com/wegeda_hq"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <img src="/images/twitterIcon.png" alt="twitter" />
             </a>
 
-            <a href="/#">
+            <a
+              href="https://www.instagram.com/wegeda_hq/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <img src="/images/instagramIcon.png" alt="instagram" />
             </a>
 
-            <a href="/#">
+            <a
+              href="https://www.facebook.com/wegedahq"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <img src="/images/facebookIcon.png" alt="facebook" />
             </a>
           </div>
