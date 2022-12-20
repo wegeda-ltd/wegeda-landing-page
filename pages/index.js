@@ -98,8 +98,8 @@ function Page() {
   return (
     <div>
       <Head>
-        <link rel="shortcut icon" href="/images/wegeda.png" />
-        <meta property="og:image" content="/images/wegeda.png" />
+        <link rel="shortcut icon" href="/images/wegeda_og.jpg" />
+        <meta property="og:image" content="/images/wegeda_og.jpg" />
         <meta property="og:url" content="https://wegeda.app" />
         <meta property="og:title" content="Wegeda" />
         <meta
