@@ -166,29 +166,13 @@ function Page() {
       </nav>
 
       {showFlag && (
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={{
-            hidden: {
-              scale: 0.1,
-              opacity: 0,
-              transition: {
-                delay: 0.001,
-              },
-            },
-            visible: {
-              scale: 1,
-              opacity: 1,
-              transition: {
-                delay: 0.001,
-              },
-            },
-          }}
+        <div
+ 
+
           style={{
             position: "absolute",
             top: 150,
-            zIndex: 1000000000000000,
+            zIndex: 10000000000000000000,
             right: 15,
             width: "300px",
             background: "#fff",
@@ -209,7 +193,7 @@ function Page() {
           >
             Nigeria
           </h3>
-        </motion.div>
+        </div>
       )}
       <div className="main-content">
         <div className="hero">
