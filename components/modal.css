@@ -143,9 +143,9 @@ textarea {
 form>button {
     cursor: pointer;
     border: none;
-    box-shadow: 0px 2px 1px #39001876;
-    background-color: #A60046;
-    border-radius: 10px;
+    box-shadow: 0px 2px 5px #7e023576;
+    background: #CF0058;
+    border-radius: 25px;
     width: 200px;
     height: 55px;
     color: #fff;
@@ -157,7 +157,12 @@ form>button {
 
 form>button:active {
     box-shadow: 0px 0px 0px #a600455c;
-    background-color: #a60045d5;
+    background: #b3014e;
+}
+
+form>button:hover {
+    box-shadow: 0px 0px 0px #a600455c;
+    background: #b3014e;
 }
 
 @media only screen and (max-width: 600px) {

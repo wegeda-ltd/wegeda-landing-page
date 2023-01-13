@@ -98,7 +98,7 @@ function Page() {
   return (
     <div>
       <Head>
-        <link rel="shortcut icon" href="/images/wegeda_og.jpg" />
+        <link rel="shortcut icon" href="/images/favicon.ico" />
         <meta property="og:image" content="/images/wegeda_og.jpg" />
         <meta property="og:url" content="https://wegeda.app" />
         <meta property="og:title" content="Wegeda" />
@@ -167,8 +167,6 @@ function Page() {
 
       {showFlag && (
         <div
- 
-
           style={{
             position: "absolute",
             top: 150,

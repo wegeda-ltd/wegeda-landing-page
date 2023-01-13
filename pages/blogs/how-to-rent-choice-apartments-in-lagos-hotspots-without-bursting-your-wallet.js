@@ -281,7 +281,7 @@ function HowToRent() {
             you can connect with another house-seeker to rent a fresh apartment.
           </p>
 
-          <Link href={"/forms/waitlist-form"} className="blog-btn">
+          <Link href={"/forms/waitlist-form"} className="">
             Be the first to choose
           </Link>
 
