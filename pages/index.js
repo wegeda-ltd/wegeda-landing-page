@@ -97,29 +97,6 @@ function Page() {
   }
   return (
     <div>
-      <Head>
-        <link rel="shortcut icon" href="/images/favicon.ico" />
-        <meta property="og:image" content="/images/wegeda_og.jpg" />
-        <meta property="og:url" content="https://wegeda.app" />
-        <meta property="og:title" content="Wegeda" />
-        <meta
-          property="og:description"
-          content="Find rooms and verified roommates across Nigeria."
-        />
-        <meta
-          name="description"
-          content="Find rooms and verified roommates across Nigeria."
-        />
-
-        <meta
-          name="keywords"
-          content="Rent, Roommates, Rent anywhere in lagos, find verified roommate, cheap houses, cheap rent"
-        ></meta>
-
-        <meta property="og:type" content="website" />
-        <title>Wegeda </title>
-      </Head>
-
       {showModal && (
         <Modal
           width={showModal ? "100%" : 0}

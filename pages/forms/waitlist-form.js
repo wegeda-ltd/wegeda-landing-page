@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import Head from "next/head";
 
 function Form() {
   const router = useRouter();
@@ -146,6 +147,25 @@ function Form() {
   ];
   return (
     <div className="form-container">
+      <Head>
+        <link rel="shortcut icon" href="/images/favicon.ico" />
+        <meta property="og:image" content="/images/wegeda_og.jpg" />
+        <meta
+          property="og:url"
+          content="https://wegeda.app/forms/waitlist-form"
+        />
+        <meta property="og:title" content="Wegeda" />
+
+        <meta
+          property="og:description"
+          content="How To Rent Choice Apartments In Lagos Hot Spots Without Bursting Your Wallet"
+        />
+        <meta
+          name="description"
+          content="How To Rent Choice Apartments In Lagos Hot Spots Without Bursting Your Wallet"
+        />
+        <title>Wegeda - Waitlist form </title>
+      </Head>
       {dupError?.error ? (
         <motion.div
           className="success-cont"
