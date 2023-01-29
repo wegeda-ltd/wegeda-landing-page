@@ -60,7 +60,7 @@ function HowToRent() {
       <div
         className="blog-wrapper"
         style={{
-          textAlign: "justify",
+          textAlign: "left",
           maxWidth: "700px",
         }}
       >
@@ -78,6 +78,9 @@ function HowToRent() {
             style={{
               marginTop: "25px",
               alignSelf: "flex-start",
+              fontWeight: "bold",
+              textDecoration: "underline",
+              // fontSize:'15px',
               color: "#b3014e",
             }}
           >
@@ -86,7 +89,13 @@ function HowToRent() {
           <img src="/images/blog_top_img.png" alt="Wegeda " />
         </div>
 
-        <div className="blog-body">
+        <div
+          className="blog-body"
+          style={{
+            lineHeight: "23px",
+            fontSize: "16px",
+          }}
+        >
           <p>As a 20 or 30-something-year-old living in Lagos…</p>
           <p>
             If you have ever tried to rent a comfortable apartment, you know
@@ -261,6 +270,11 @@ function HowToRent() {
             *Data collected for verification are never shared publicly.
           </p>
           <p>
+            <div
+              style={{
+                height: "15px",
+              }}
+            />
             <span>MATCH: </span>
             it all begins with a search. When you search for a location of
             interest, Wegeda provides user profiles that are also interested in
@@ -280,7 +294,18 @@ function HowToRent() {
           </p>
 
           <p>
-            <span>CO-RENT: </span>
+            <div
+              style={{
+                height: "15px",
+              }}
+            />
+            <span
+            // style={{
+            //   marginTop: "20px",
+            // }}
+            >
+              CO-RENT:{" "}
+            </span>
             After you’ve settled on a user who you’d be pleased to share a house
             with, you can then select a listed apartment on Wegeda in your
             location of desire which fits your agreed-upon budget. Connect to

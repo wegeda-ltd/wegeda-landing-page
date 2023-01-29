@@ -140,16 +140,17 @@
 }
 
 .blog-body>p {
-  margin-bottom: 15px;
+  margin-bottom: 13px;
+
 }
 
 ul {
-  padding: 20px 40px;
+  padding: 10px 40px;
 
 }
 
 li {
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .italicized {
@@ -168,12 +169,14 @@ li {
 
 .blog-body>img {
   margin-top: 20px;
-  max-width: 400px;
+  margin-bottom: 25px !important;
+  max-width: 300px;
   width: 80%;
   align-self: center;
 }
 
 .blog-body>p>span {
+  margin-top: 20px !important;
   font-weight: bold;
   font-size: 18px;
 }
@@ -183,11 +186,17 @@ li {
 
 .blog-body>a {
   text-decoration: none;
-  margin-top: 20px;
+  margin-top: 40px;
+  margin-bottom: 20px;
   background: #CF0058;
   align-self: center;
   color: #fff;
-  padding: 18px 30px;
+  width: 300px;
+  height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* padding: 18px; */
   border-radius: 30px;
 }
 
