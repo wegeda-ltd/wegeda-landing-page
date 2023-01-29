@@ -356,42 +356,22 @@ function Page() {
                   <img
                     alt=""
                     src={`${
-                      showFaq &&
                       currFaq.toLowerCase().includes(faq.question.toLowerCase())
                         ? "/images/expand_less.png"
                         : "/images/expand_more.png"
                     }`}
                     style={{
-                      width:
-                        showFaq &&
-                        currFaq
-                          .toLowerCase()
-                          .includes(faq.question.toLowerCase())
-                          ? "10px"
-                          : "20px",
+                      width: currFaq
+                        .toLowerCase()
+                        .includes(faq.question.toLowerCase())
+                        ? "10px"
+                        : "20px",
                     }}
                   />
                 </div>
-                <div
-                  className={`${
-                    showFaq &&
-                    currFaq.toLowerCase().includes(faq.question.toLowerCase())
-                      ? "faq-body-show"
-                      : "faq-body"
-                  }`}
-                  style={{
-                    display:
-                      showFaq &&
-                      currFaq.toLowerCase().includes(faq.question.toLowerCase())
-                        ? "block"
-                        : "none",
-                    width: "90%",
-                    marginTop: "20px",
-                    marginBottom: "10px",
-                  }}
-                >
-                  {faq.answer}
-                </div>
+                {currFaq.toLowerCase().includes(faq.question.toLowerCase()) && (
+                  <div className={`${"faq-body-show"}`}>{faq.answer}</div>
+                )}
                 <hr />
               </div>
             ))}

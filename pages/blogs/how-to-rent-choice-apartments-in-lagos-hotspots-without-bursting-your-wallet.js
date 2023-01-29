@@ -57,7 +57,13 @@ function HowToRent() {
         </title>
       </Head>
 
-      <div className="blog-wrapper">
+      <div
+        className="blog-wrapper"
+        style={{
+          textAlign: "justify",
+          maxWidth: "700px",
+        }}
+      >
         <div className="blog-header">
           <h1>
             How To Rent Choice Apartments In Lagos Hot Spots Without Bursting
@@ -68,6 +74,15 @@ function HowToRent() {
             Want Within 2 Days of Looking
           </h5>
 
+          <span
+            style={{
+              marginTop: "25px",
+              alignSelf: "flex-start",
+              color: "#b3014e",
+            }}
+          >
+            Get 50% off when you signup now!
+          </span>
           <img src="/images/blog_top_img.png" alt="Wegeda " />
         </div>
 
@@ -78,8 +93,8 @@ function HowToRent() {
             that the costs can be… ridiculous.
           </p>
           <p>
-            You could pay your rent one day… and spend the rest of the year
-            worrying about the next rent payment.
+            You could complete one rent payment, and spend the rest of the year
+            worrying about the next one.
           </p>
           <p>
             And when you cannot afford the costly rents in the desirable
@@ -99,12 +114,12 @@ function HowToRent() {
 
           <p>
             With the face-me-I-slap-you option, you have to be ready to bear
-            whatever your eyes see from neighbours.
+            whatever your eyes see from neighbors.
           </p>
           <p>
             And if you choose to settle away from the mainland/Island axis,
             you’re inadvertently opting for high transportation costs and 3 - 6
-            daily hours of traffic… especially if your workplace is within the
+            daily hours of traffic. Especially if your workplace is within the
             mainland or Island axis.
           </p>
 
