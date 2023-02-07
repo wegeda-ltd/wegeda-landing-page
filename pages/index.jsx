@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { init } from "ityped";
 import Head from "next/head";
 import { useRouter } from "next/router";
+import Link from 'next/link'
 function Page() {
   const router = useRouter();
 
@@ -342,12 +343,11 @@ function Page() {
 
             {FAQ.map((faq, index) => (
               <div
-                className={`faq ${
-                  showFaq &&
+                className={`faq ${showFaq &&
                   currFaq.toLowerCase().includes(faq.question.toLowerCase())
-                    ? "faq-body-show-cont"
-                    : ""
-                }`}
+                  ? "faq-body-show-cont"
+                  : ""
+                  }`}
                 key={index}
                 onClick={() => openFaq(faq.question)}
               >
@@ -355,11 +355,10 @@ function Page() {
                   <h3>{faq.question}</h3>
                   <img
                     alt=""
-                    src={`${
-                      currFaq.toLowerCase().includes(faq.question.toLowerCase())
-                        ? "/images/expand_less.png"
-                        : "/images/expand_more.png"
-                    }`}
+                    src={`${currFaq.toLowerCase().includes(faq.question.toLowerCase())
+                      ? "/images/expand_less.png"
+                      : "/images/expand_more.png"
+                      }`}
                     style={{
                       width: currFaq
                         .toLowerCase()
@@ -418,21 +417,12 @@ function Page() {
 
           <div className="policy">
 
-            <a onClick={() =>
-                router.push(
-                  "privacy-policy"
-                )
-              }
-              style={{
-                cursor:'pointer'
-              }}
-              >Privacy Policy</a>
-            <a 
-              style={{
-                cursor:'pointer'
-              }}
-            
-            >Terms of use</a>
+            <Link href="/privacy-policy" >
+              Privacy Policy
+            </Link>
+            <Link href="/terms-of-use" >
+
+              Terms of use</Link>
           </div>
         </div>
       </footer>
