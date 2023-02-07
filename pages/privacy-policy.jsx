@@ -56,7 +56,7 @@ export default () => {
 
 
       <div
-        className="blog-wrapper"
+        className="blog-wrapper policy"
         style={{
           textAlign: "left",
           maxWidth: "700px",

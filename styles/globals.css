@@ -226,6 +226,10 @@ li {
   text-transform: uppercase;
 }
 
+.policy>p {
+  text-align: justify;
+}
+
 /* @media screen and (max-width: 650px) {
   .policy-header>h1 {
     font-size: 25px;
