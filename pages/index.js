@@ -417,8 +417,22 @@ function Page() {
           />
 
           <div className="policy">
-            <a href="/#">Privacy Policy</a>
-            <a href="/#">Terms of use</a>
+
+            <a onClick={() =>
+                router.push(
+                  "privacy-policy"
+                )
+              }
+              style={{
+                cursor:'pointer'
+              }}
+              >Privacy Policy</a>
+            <a 
+              style={{
+                cursor:'pointer'
+              }}
+            
+            >Terms of use</a>
           </div>
         </div>
       </footer>
