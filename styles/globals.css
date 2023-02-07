@@ -208,4 +208,37 @@ li {
   background: #b3014e;
 }
 
+.policy-header {
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-weight: 500;
+
+}
+
+.policy-header>h1 {
+  text-transform: uppercase;
+}
+
+.policy-header>h2 {
+  text-transform: uppercase;
+}
+
+/* @media screen and (max-width: 650px) {
+  .policy-header>h1 {
+    font-size: 25px;
+  }
+
+  .policy-header>h2 {
+
+    font-size: 20px;
+  }
+ */
+/* } */
+
+
+
+
 /* BLOG STYLES END*/

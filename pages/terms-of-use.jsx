@@ -20,6 +20,7 @@ export default () => {
 
     document.body.style.zoom = 100 + "%";
 
+    console.log(document.body.style.zoom);
 
     //change dimension on page resize
     window.addEventListener("resize", handleResize);
@@ -64,9 +65,18 @@ export default () => {
         }}
       >
         <div
-          className="policy-header"
+          style={{
+            backgroundColor: '#e0e0e0',
+            width: '100%',
+            paddingTop: '10px',
+            paddingBottom: '10px',
+            marginBottom: '10px',
+
+          }}
         >
           <h1 style={{
+            marginLeft: '10px',
+            fontWeight: '400',
 
           }}>Privacy Policy</h1>
         </div>
@@ -76,10 +86,20 @@ export default () => {
 
         {/* Data */}
         <div
-          className="policy-header"
+          style={{
+            backgroundColor: '#e0e0e0',
+            width: '100%',
+            paddingTop: '10px',
+            paddingBottom: '10px',
+            marginTop: '20px',
+            marginBottom: '10px'
 
+
+          }}
         >
           <h2 style={{
+            marginLeft: '10px',
+            fontWeight: '400',
 
           }}>Data that we collect</h2>
         </div>
@@ -100,11 +120,19 @@ export default () => {
 
         {/* Other uses */}
         <div
-          className="policy-header"
+          style={{
+            backgroundColor: '#e0e0e0',
+            width: '100%',
+            paddingTop: '10px',
+            paddingBottom: '10px',
+            marginTop: '20px',
+            marginBottom: '10px',
 
-
+          }}
         >
           <h2 style={{
+            marginLeft: '10px',
+            fontWeight: '400',
 
 
           }}>Other uses of your personal information
@@ -127,10 +155,19 @@ export default () => {
 
         {/* Disclosure */}
         <div
-          className="policy-header"
+          style={{
+            backgroundColor: '#e0e0e0',
+            width: '100%',
+            paddingTop: '10px',
+            paddingBottom: '10px',
+            marginTop: '20px',
+            marginBottom: '10px'
 
+          }}
         >
           <h2 style={{
+            marginLeft: '10px',
+            fontWeight: '400',
 
 
           }}>Our disclosure of your information
@@ -172,11 +209,20 @@ export default () => {
 
         {/* Third parties */}
         <div
-          className="policy-header"
+          style={{
+            backgroundColor: '#e0e0e0',
+            width: '100%',
+            paddingTop: '10px',
+            paddingBottom: '10px',
+            marginTop: '20px',
+            marginBottom: '10px',
 
 
+          }}
         >
           <h2 style={{
+            marginLeft: '10px',
+            fontWeight: '400',
 
 
           }}>Third parties and links
@@ -190,11 +236,19 @@ export default () => {
 
         {/* Third parties */}
         <div
-          className="policy-header"
+          style={{
+            backgroundColor: '#e0e0e0',
+            width: '100%',
+            paddingTop: '10px',
+            paddingBottom: '10px'
+            , marginTop: '20px',
+            marginBottom: '10px',
 
-
+          }}
         >
           <h2 style={{
+            marginLeft: '10px',
+            fontWeight: '400',
 
 
           }}>No spam, spyware or spoofing
@@ -208,11 +262,20 @@ export default () => {
 
         {/* Account protection */}
         <div
-          className="policy-header"
+          style={{
+            backgroundColor: '#e0e0e0',
+            width: '100%',
+            paddingTop: '10px',
+            paddingBottom: '10px'
+            ,
+            marginTop: '20px',
+            marginBottom: '10px',
 
-
+          }}
         >
           <h2 style={{
+            marginLeft: '10px',
+            fontWeight: '400',
 
 
           }}>No spam, spyware or spoofing
@@ -227,11 +290,19 @@ export default () => {
 
         {/* Security */}
         <div
-          className="policy-header"
+          style={{
+            backgroundColor: '#e0e0e0',
+            width: '100%',
+            paddingTop: '10px',
+            paddingBottom: '10px',
+            marginTop: '20px',
+            marginBottom: '10px',
 
-
+          }}
         >
           <h2 style={{
+            marginLeft: '10px',
+            fontWeight: '400',
 
 
           }}>Security
@@ -250,11 +321,20 @@ export default () => {
 
         {/* Cookies */}
         <div
-          className="policy-header"
+          style={{
+            backgroundColor: '#e0e0e0',
+            width: '100%',
+            paddingTop: '10px',
+            paddingBottom: '10px'
+            ,
+            marginTop: '20px',
+            marginBottom: '10px',
 
-
+          }}
         >
           <h2 style={{
+            marginLeft: '10px',
+            fontWeight: '400',
 
 
           }}>Cookies
@@ -272,11 +352,20 @@ export default () => {
 
         {/* Your rights */}
         <div
-          className="policy-header"
+          style={{
+            backgroundColor: '#e0e0e0',
+            width: '100%',
+            paddingTop: '10px',
+            paddingBottom: '10px'
+            ,
+            marginTop: '20px',
+            marginBottom: '10px',
 
-
+          }}
         >
           <h2 style={{
+            marginLeft: '10px',
+            fontWeight: '400',
 
 
           }}>Your Rights</h2>
