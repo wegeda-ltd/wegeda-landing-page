@@ -215,7 +215,7 @@ export default () => {
           <h2 style={{
 
 
-          }}>No spam, spyware or spoofing
+          }}>Account protection
           </h2>
         </div>
 
