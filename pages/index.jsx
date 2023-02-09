@@ -417,12 +417,17 @@ function Page() {
 
           <div className="policy">
 
-            <Link href="/privacy-policy" target={"_blank"} rel={"noreferrer noopener"}>
-              Privacy Policy
+            <Link href="/privacy-policy" passHref >
+              <a target={"_blank"} rel={"noreferrer noopener"}>
+                Privacy Policy
+              </a>
             </Link>
-            <Link href="/terms-of-use" target={"_blank"} rel={"noreferrer noopener"}>
+            <Link href="/terms-of-use" passHref>
+              <a target={"_blank"} rel={"noreferrer noopener"}>
 
-              Terms of use</Link>
+                Terms of use
+              </a>
+            </Link>
           </div>
         </div>
       </footer>
