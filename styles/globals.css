@@ -234,7 +234,8 @@ li {
   text-align: left;
   margin-top: 20px;
 
-  padding-left: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .main-list>li {
@@ -244,7 +245,8 @@ li {
 }
 
 .sub-list {
-  padding-left: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 /* @media screen and (max-width: 650px) {
