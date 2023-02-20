@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { usePaystackPayment } from 'react-paystack';
 
 
@@ -37,6 +37,16 @@ const Paystack = ({ amount, email }) => {
 
 
 export default () => {
+    const [email, setEmail] = useState('')
+    const [amount, setAmount] = useState('')
+
+    if (typeof window !== 'undefined') {
+        const email = localStorage.getItem("user_email")
+        setEmail(email)
+        const price = localStorage.getItem("sub_price")
+        setAmount(price)
+        alert(`${email} \n\n ${price}`)
+    }
     useEffect(() => {
         if (typeof window !== 'undefined') {
             const email = localStorage.getItem("user_email")
@@ -44,7 +54,7 @@ export default () => {
 
             alert(`${email} \n\n ${price}`)
         }
-    }, [])
+    }, [email, amount])
     return (
         <div>
             <Paystack amount={2000} email={"sdamilolajoseph@gmail.com"} />
