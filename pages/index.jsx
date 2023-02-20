@@ -48,11 +48,6 @@ function Page() {
     });
   }, []);
 
-  useEffect(() => {
-    console.log(textRef.current.innerHtml, "TEXT REF");
-    console.log(textRef.current.text, "TEXT REF");
-    console.log(textRef.current, "TEXT REF");
-  }, [textRef.current]);
 
   const openFaq = (question) => {
     setCurrFaq(question.toLowerCase());
