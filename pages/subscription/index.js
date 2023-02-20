@@ -52,7 +52,7 @@ export default () => {
             const email = localStorage.getItem("user_email")
             const price = localStorage.getItem("sub_price")
 
-            alert(`${email} \n\n ${price}`)
+            // alert(`${email} \n\n ${price}`)
         }
     }, [email, amount])
     return (
