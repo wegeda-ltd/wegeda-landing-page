@@ -40,6 +40,9 @@ export default () => {
     const [email, setEmail] = useState('')
     const [amount, setAmount] = useState('')
 
+    function alertSmtn(data = "Hello") {
+        alert(data)
+    }
     // if (typeof window !== 'undefined') {
     //     const email = localStorage.getItem("user_email")
     //     setEmail(email)
@@ -51,7 +54,7 @@ export default () => {
             const email = localStorage.getItem("user_email")
             const price = localStorage.getItem("sub_price")
 
-            alert(`${email} \n\n ${price}`)
+            // alert(`${email} \n\n ${price}`)
         }
     }, [email, amount])
     return (
