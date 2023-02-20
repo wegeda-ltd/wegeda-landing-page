@@ -14,7 +14,7 @@ const Paystack = ({ amount, email }) => {
 
     const onSuccess = (reference) => {
         if (typeof window !== 'undefined') {
-            window.ReactNativeWebView.postMessage({ message: "Successful", status: true })
+            window.ReactNativeWebView.postMessage("successful")
         }
         // Implementation for whatever you want to do with reference and after success call.
         console.log(reference);
