@@ -39,10 +39,10 @@ const Paystack = ({ amount, email }) => {
 export default () => {
     useEffect(() => {
         if (typeof window !== 'undefined') {
-            window.addEventListener("message", message => {
-                console.log("message")
-                alert(message.data)
-            })
+            const email = localStorage.getItem("user_email")
+            const price = localStorage.getItem("sub_price")
+
+            alert(`${email} \n\n ${price}`)
         }
     }, [])
     return (
