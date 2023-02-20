@@ -45,7 +45,6 @@ export default () => {
         setEmail(email)
         const price = localStorage.getItem("sub_price")
         setAmount(price)
-        alert(`${email} \n\n ${price}`)
     }
     useEffect(() => {
         if (typeof window !== 'undefined') {
