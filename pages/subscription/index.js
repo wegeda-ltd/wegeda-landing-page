@@ -41,7 +41,7 @@ export default () => {
         if (typeof window !== 'undefined') {
             window.addEventListener("message", message => {
                 console.log("message")
-                alert(message)
+                alert(message.data)
             })
         }
     }, [])
