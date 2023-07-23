@@ -119,7 +119,7 @@ function Page() {
               className="nav-download-btn"
               onClick={() =>
                 router.push(
-                  "blogs/how-to-rent-choice-apartments-in-lagos-hotspots-without-bursting-your-wallet"
+                  "/forms/waitlist-form"
                 )
               }
             >

@@ -338,6 +338,33 @@ function Form() {
           >
             <div className="form-group">
               <div className="input-group" style={{ marginRight: "35px" }}>
+                <label htmlFor="fname">First Name:</label>
+                <input
+                  value={first_name}
+                  onChange={(e) => setFirstName(e.target.value)}
+                  required
+                  id="fname"
+                  name="fname"
+                  type="text"
+                  style={{ width: "100%" }}
+                />
+              </div>
+              <div className="input-group">
+                <label htmlFor="lname">Last Name:</label>
+                <input
+                  value={last_name}
+                  onChange={(e) => setLastName(e.target.value)}
+                  required
+                  id="lname"
+                  name="lname"
+                  type="text"
+                  style={{ width: "100%" }}
+                />
+              </div>
+            </div>
+
+            <div className="form-group">
+              <div className="input-group" style={{ marginRight: "35px" }}>
                 <label htmlFor="occupation">Occupation:</label>
                 <input
                   value={occupation}
@@ -377,32 +404,6 @@ function Form() {
               </div>
             </div>
 
-            <div className="form-group">
-              <div className="input-group" style={{ marginRight: "35px" }}>
-                <label htmlFor="fname">First Name:</label>
-                <input
-                  value={first_name}
-                  onChange={(e) => setFirstName(e.target.value)}
-                  required
-                  id="fname"
-                  name="fname"
-                  type="text"
-                  style={{ width: "100%" }}
-                />
-              </div>
-              <div className="input-group">
-                <label htmlFor="lname">Last Name:</label>
-                <input
-                  value={last_name}
-                  onChange={(e) => setLastName(e.target.value)}
-                  required
-                  id="lname"
-                  name="lname"
-                  type="text"
-                  style={{ width: "100%" }}
-                />
-              </div>
-            </div>
             <div className="form-group">
               <div className="input-group" style={{ marginRight: "35px" }}>
                 <label htmlFor="phone">Mobile Number:</label>
