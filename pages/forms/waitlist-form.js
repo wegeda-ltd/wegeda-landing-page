@@ -286,7 +286,7 @@ function Form() {
             backgroundColor: "white",
             padding: "20px",
             marginTop: "20px",
-            maxWidth: "85%",
+            width: "85%",
             position: "relative",
           }}
         >
@@ -306,7 +306,7 @@ function Form() {
             >
               Join the waitlist now!
             </h4>
-            <p className="modal-text">
+            {/* <p className="modal-text">
               Dear friend, <br />
               Thank you for your interest in Wegeda.
               <br />
@@ -328,7 +328,7 @@ function Form() {
               <br />
               <br />
               <p className="modal-text">LAUNCH DATE: JANUARY 2023</p>
-            </p>
+            </p> */}
           </div>
           <form
             onSubmit={(e) => {
