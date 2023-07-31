@@ -91,6 +91,8 @@ function Page() {
     //change dimension on page resize
     window.addEventListener("resize", handleResize);
   }
+
+  console.log(currFaq, showFaq)
   return (
     <div>
       {showModal && (
@@ -350,20 +352,20 @@ function Page() {
                   <h3>{faq.question}</h3>
                   <img
                     alt=""
-                    src={`${currFaq.toLowerCase().includes(faq.question.toLowerCase())
+                    src={`${currFaq.toLowerCase().includes(faq.question.toLowerCase()) && showFaq
                       ? "/images/expand_less.png"
                       : "/images/expand_more.png"
                       }`}
                     style={{
                       width: currFaq
                         .toLowerCase()
-                        .includes(faq.question.toLowerCase())
+                        .includes(faq.question.toLowerCase()) && showFaq
                         ? "10px"
                         : "20px",
                     }}
                   />
                 </div>
-                {currFaq.toLowerCase().includes(faq.question.toLowerCase()) && (
+                {currFaq.toLowerCase().includes(faq.question.toLowerCase()) && showFaq && (
                   <div className={`${"faq-body-show"}`}>{faq.answer}</div>
                 )}
                 <hr />
