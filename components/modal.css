@@ -105,6 +105,14 @@ form {
 }
 
 
+input {
+    width: 100% !important;
+
+}
+
+select {
+    width: 104% !important;
+}
 
 .input-group {
     align-self: flex-end;

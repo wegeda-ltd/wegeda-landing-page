@@ -21,7 +21,6 @@ export default async function handler(req, res) {
     },
   } = req;
 
-  console.log(gender, "gender...");
   let created_at = new Date().toISOString();
 
   phone = phone.slice(1);
