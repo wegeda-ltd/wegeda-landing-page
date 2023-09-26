@@ -50,13 +50,17 @@ function Page() {
 
 
   const openFaq = (question) => {
-    setCurrFaq(question.toLowerCase());
 
-    if (showFaq === false) {
-      setShowFaq(true);
+    if (currFaq === question.toLowerCase()) {
+      setShowFaq(!showFaq)
     } else {
-      setShowFaq(false);
+      setCurrFaq(question.toLowerCase());
+
+      setShowFaq(true)
     }
+
+
+
   };
 
   const maxPercentage = 100;
