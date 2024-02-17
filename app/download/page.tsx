@@ -1,6 +1,7 @@
 "use client";
 
 
+import Chat from '@/components/chat';
 import Footer from '@/components/footer'
 import Navbar from '@/components/navbar'
 import Image from 'next/image';
@@ -57,6 +58,8 @@ function Download() {
             </main>
 
             <Footer />
+
+            <Chat />
         </div>
     )
 }
