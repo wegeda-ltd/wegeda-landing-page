@@ -1,30 +1,30 @@
 {
-  "name": "campaign-ad",
-  "version": "1.0.0",
-  "description": "Campaign",
-  "main": "index.js",
+  "name": "wegeda-landing",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "next start",
+    "lint": "next lint"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "framer-motion": "^7.6.19",
-    "google-spreadsheet": "^3.3.0",
     "ityped": "^1.0.3",
-    "motion": "^10.14.2",
-    "next": "^12.3.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-paystack": "^4.0.2",
-    "react-quill": "^2.0.0"
+    "next": "14.1.0",
+    "react": "^18",
+    "react-dom": "^18",
+    "typewriter-effect": "^2.21.0"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.12",
-    "postcss": "^8.4.17",
-    "prop-types": "^15.8.1"
+    "@types/ityped": "^1.0.3",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "autoprefixer": "^10.0.1",
+    "eslint": "^8",
+    "eslint-config-next": "14.1.0",
+    "postcss": "^8",
+    "tailwindcss": "^3.3.0",
+    "typescript": "^5"
   }
 }
