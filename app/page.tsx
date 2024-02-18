@@ -19,17 +19,16 @@ export default function Home() {
     <div className="min-h-[100vh] relative">
       <Navbar />
 
-      <main className="sm:mt-[120px] mt-[100px]">
+      <main className="sm:mt-[120px] mt-[100px] ">
 
         {/* Find your next housemate */}
-        <section className="relative hero w-[100%]">
-          <div className="flex sm:p-24 py-24 px-10 z-[3] relative sm:flex-row flex-col">
+        <section className="relative hero w-[100%] !max-[620px]:!h-fit overflow-hidden">
+          <div className="flex sm:p-24 p-10 max-[400px]:p-6 z-[3] relative sm:flex-row flex-col max-[620px]:h-[100%]">
             <div className="flex-1 sm:pt-[100px]">
               <h6 className="font-[500] sm:text-[2rem] text-[1.4375rem]">Find your next</h6>
               <div className="relative ">
-                <h1 className="font-[700] sm:text-[5.3125rem] text-[3.125rem] text-[#A60046]">
+                <h1 className="font-[700] sm:text-[5.3125rem] text-[3.12rem] max-[400px]:text-[2.7rem] text-[#A60046]">
                   <TypewriterComponent
-
                     options={{
                       strings: ["Housemates", "Roommates", "House to Rent", "Room to Rent"],
                       autoStart: true,
@@ -43,16 +42,17 @@ export default function Home() {
                   />
                 </h1>
                 <Image
-                  className="absolute bottom-[0px] right-[20%]"
+                  className="absolute bottom-[0px] right-[20%] sm:w-[292px] sm:h-[38.35px] w-[200px]"
                   src={'/icons/signature.svg'}
                   alt="signature"
                   width={292}
                   height={38.35}
+
                 />
               </div>
 
 
-              <div className="flex items-center gap-[15px] mt-[50px] max-[620px]:mb-[50px]">
+              <div className="flex items-center gap-[15px] mt-[50px] max-[620px]:mb-[30px]">
                 <button>
                   <Image
                     src={'/icons/appstore.svg'}
@@ -72,8 +72,8 @@ export default function Home() {
               </div>
 
             </div>
-            <div className="flex-1 flex gap-[100px] relative sm:w-[50%] ">
-              <div className="relative sm:w-fit w-[100%]">
+            <div className="flex-[1] sm:flex sm:gap-[100px] relative sm:w-[50%] ">
+              <div className="sm:relative sm:w-fit w-[100%]">
                 <div
                   className="max-[620px]:hidden rounded-[20px] w-[300px] h-[450px] border-[1px] border-[#CF7997]"
                 />
@@ -82,7 +82,7 @@ export default function Home() {
                   alt="woman on wegeda"
                   width={300}
                   height={450}
-                  className="sm:absolute bottom-[40px] left-[40px] sm:w-[300px] w-[100%]  "
+                  className="sm:absolute sm:bottom-[40px] sm:left-[40px] sm:w-[300px] sm:h-[450px] w-[100%] h-[350px] object-cover rounded-[20px]"
                 />
 
               </div>
@@ -116,8 +116,8 @@ export default function Home() {
 
 
         {/* Search and meet */}
-        <section className="right-gradient max-[620px]:pt-[80px]">
-          <div className=" sm:p-24 py-24 px-10 relative">
+        <section className="right-gradient">
+          <div className=" sm:p-24 p-10 relative">
             <h3 className="sm:w-[402px] w-[100%] sm:text-[2.5rem] text-[1.875rem] font-[600] sm:leading-[52px] leading-[42px]">
               Search, chat & meet
               with housemates

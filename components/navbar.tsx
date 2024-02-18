@@ -20,7 +20,7 @@ function Navbar() {
             };
 
             let zoom =
-                dimensions.width > 640 && dimensions.width < maxWidth
+                dimensions.width > 620 && dimensions.width < maxWidth
                     ? (dimensions.width * maxPercentage) / maxWidth
                     : 100;
 
