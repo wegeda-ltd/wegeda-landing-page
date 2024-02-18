@@ -157,9 +157,9 @@ textarea {
 input:valid+label,
 textarea:focus+label,
 textarea:valid+label {
-  top: 5px;
+  top: 0px;
   left: 10px;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   color: #FFF;
   background: #CF0058;
   padding: 0 10px;
@@ -210,4 +210,81 @@ textarea {
 
 .chat-shadow {
   box-shadow: 40px 20px 40px rgba(34, 34, 34, 0.1);
+}
+
+
+
+/* LOADING INDICATOR */
+
+.loader {
+  display: inline-block;
+  position: relative;
+  width: 50px;
+  height: 40px;
+}
+
+
+.loader div {
+  position: absolute;
+  top: 45%;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #FFF;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+
+.loader div:nth-child(1) {
+  left: 6px;
+  animation: loader1 0.6s infinite;
+}
+
+.loader div:nth-child(2) {
+  left: 6px;
+  animation: loader2 0.6s infinite;
+}
+
+.loader div:nth-child(3) {
+  left: 20px;
+  animation: loader2 0.6s infinite;
+}
+
+.loader div:nth-child(4) {
+  left: 40px;
+  animation: loader3 0.6s infinite;
+}
+
+@keyframes loader1 {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes loader3 {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(0);
+  }
+}
+
+@keyframes loader2 {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(19px, 0);
+  }
+}
+
+
+.animated-btn:hover .loader>div {
+  background-color: #CF0058;
 }

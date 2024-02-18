@@ -13,20 +13,21 @@ function Download() {
             <Navbar />
 
             <main className="sm:mt-[120px] mt-[100px] h-[100%]">
-                <div className='flex p-10 overflow-y-hidden sm:flex-row flex-col-reverse'>
+                <div className='flex p-8 overflow-y-hidden sm:flex-row flex-col-reverse'>
 
-                    <div className='flex-[2] h-[575px] relative max-[620px]:w-fit'>
+                    <div className='flex-[2] sm:h-[575px] relative max-[620px]:w-[100%]  overflow-hidden '>
                         <Image
                             src={'/icons/phones.svg'}
                             alt='demo'
                             width={565.47}
                             height={565}
 
-                            className='sm:w-[100%] sm:h-[565px] z-[1] relative'
+                            className='sm:w-[100%] sm:h-[565px] aspect-square  z-[1] relative self-center sm:ml-[0] ml-[5%]'
                         />
 
-                        <div className='absolute top-[250px] 2xl:left-[140px] sm:left-[100px] left-[-10%]  bg-[#CF0058] sm:h-[767.53px] h-[500px] w-[500px] sm:w-[767.53px] rounded-full' />
-
+                        <div className='w-[98%] aspect-video overflow-y-hidden self-center sm:mt-[-25%] mt-[-55%] 2xl:ml-[15%] lg:ml-[10%] sm:ml-[10%] ml-[2%]'>
+                            <div className='top-[250px]   bg-[#CF0058] sm:h-[767.53px] w-[98%] aspect-square sm:w-[767.53px] rounded-full' />
+                        </div>
 
                     </div>
 
