@@ -17,7 +17,7 @@ function Download() {
 
                     <div className='flex-[2] sm:h-[575px] relative max-[620px]:w-[100%]  overflow-hidden '>
                         <Image
-                            src={'/icons/phones.svg'}
+                            src={'/icons/phones.png'}
                             alt='demo'
                             width={565.47}
                             height={565}
