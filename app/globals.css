@@ -288,3 +288,16 @@ textarea {
 .animated-btn:hover .loader>div {
   background-color: #CF0058;
 }
+
+
+
+/* BLOG */
+.blog-card {
+  transition: all 0.3s linear;
+}
+
+.active-page {
+  color: #FFF;
+  background-color: #CF0058;
+  transition: all 0.3s linear;
+}
