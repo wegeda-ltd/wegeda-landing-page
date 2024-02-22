@@ -94,7 +94,7 @@ function Chat() {
                         </div>
                         <div className="form-group flex-1 mt-6 border-[1px]">
                             <input value={phone} onChange={(e) => setPhone(e.target.value)} id="tel" name="tel" type="tel" required />
-                            <label htmlFor="tel">Phone</label>
+                            <label htmlFor="tel">Mobil Phone</label>
                         </div>
 
                         <div className="form-group flex-1 mt-6 border-[1px]" >
