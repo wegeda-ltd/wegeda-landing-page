@@ -9,6 +9,16 @@ const quicksand = Quicksand({ subsets: ['latin-ext'] });
 export const metadata: Metadata = {
   title: "Wegeda",
   description: "Find rooms and verified roommates across Nigeria.",
+  openGraph: {
+    type: "website",
+    url: "https://wegeda.app",
+    title: "Wegeda",
+    description: "Find rooms and verified roommates across Nigeria.",
+    siteName: "Wegeda",
+    images: [{
+      url: "https://wegeda.app/icons/logo.png",
+    }],
+  }
 };
 
 
