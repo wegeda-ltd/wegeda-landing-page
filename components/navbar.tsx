@@ -77,10 +77,8 @@ function Navbar() {
     const getCurrentPage = (link: string) => {
 
         if (link === '/') {
-            console.log("HERE")
             return path === link
         } else {
-            console.log(path, link, "PATH")
             return path.includes(link)
         }
     }
