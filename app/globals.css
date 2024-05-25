@@ -383,3 +383,78 @@ input:-webkit-autofill:active {
   background-color: #A60048;
 
 }
+
+
+/* EDITOR */
+.ql-container {
+  min-height: 200px;
+  border: 1px solid #DDD !important;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.ql-container .ql-snow {
+  border: 1px solid #DDD !important;
+}
+
+.ql-toolbar.ql-snow {
+  border-width: 0px !important;
+  border-top: 1px solid #DDD !important;
+  border-left: 1px solid #DDD !important;
+  border-right: 1px solid #DDD !important;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+
+}
+
+.ql-editor {
+  height: 100% !important;
+}
+
+.quill h1 {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+
+
+.quill h2 {
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.quill h3 {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.quill h4 {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.quill h5 {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.quill h6 {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.quill a:visited {
+
+  color: #c58af9;
+
+}
+
+.quill a {
+  color: #8ab4f8;
+  text-decoration: none;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, .1);
+}
+
+.quill a:-webkit-any-link {
+  cursor: pointer;
+}

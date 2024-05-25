@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "react-quill/dist/quill.snow.css";
+import { ToastContainer } from "react-toastify";
 
 
 export const metadata: Metadata = {
@@ -26,7 +27,11 @@ export default function RootLayout({
 
   return (
     <html lang="en">
+      <ToastContainer
+        hideProgressBar={true}
+        autoClose={2000}
 
+      />
       <body>{children}</body>
     </html>
   );

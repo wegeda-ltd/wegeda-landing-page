@@ -1,7 +1,10 @@
 "use client";
 
+import axiosInstance from '@/helpers/axios-instance';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 import React, { FormEvent, useEffect, useRef, useState } from 'react'
+import { toast } from 'react-toastify';
 
 function Onboarding() {
     const [currentTab, setCurrentTab] = useState(0)
@@ -10,16 +13,63 @@ function Onboarding() {
     const [instagram, setInstagram] = useState('')
     const [facebook, setFacebook] = useState('')
     const [dp, setDp] = useState<File | null>(null)
+    const [bio, setBio] = useState('')
     const [tempDp, setTempDp] = useState<any>('/icons/upload-placeholder.svg')
+    const [loading, setLoading] = useState(false)
+
+    const router = useRouter()
 
     const imagePickerRef = useRef<HTMLInputElement>(null)
 
-    const onSubmit = (e: FormEvent<HTMLFormElement>) => {
+    const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault()
+        setLoading(true)
+        try {
+            if (currentTab === 0 && (!fullName || !bio)) {
+                toast.error("Please enter your full name and bio")
+                return
+            }
+            if (currentTab === 1 && (!twitter || !facebook || !instagram)) {
+                toast.error("Please enter your social handles")
+                return
+            }
 
-        if (currentTab < 2) {
-            setCurrentTab(prev => prev + 1)
+            if (currentTab === 2 && !tempDp) {
+                toast.error("Please upload a picture")
+            }
+
+            if (currentTab < 2) {
+                setCurrentTab(prev => prev + 1)
+            } else {
+                const form = new FormData()
+                form.append('image', dp!)
+                form.append('fullName', fullName)
+                form.append('bio', bio)
+                form.append('facebook', facebook)
+                form.append('instagram', instagram)
+                form.append('twitter', twitter)
+
+                const response = await axiosInstance.patch('/users/update', form, {
+                    headers: {
+                        'Content-Type': "multipart/form-data"
+                    }
+                })
+                toast.success(response.data.message)
+
+                router.push('/blogs/dashboard')
+
+                setLoading(false)
+            }
+        } catch (error: any) {
+            console.log(error, "ERROR")
+            setLoading(false)
+            if (error?.response?.data) {
+                toast.error(error?.response?.data.errors[0].message)
+            } else {
+                toast.error("An Error Occurred")
+            }
         }
+
     }
 
     const previewDp = () => {
@@ -65,6 +115,8 @@ function Onboarding() {
                     <div className='w-[100%] mb-[16px]'>
                         <label htmlFor='bio' className='block mb-[6px] text-[0.875rem]'>Bio</label>
                         <textarea
+                            value={bio}
+                            onChange={(e) => setBio(e.target.value)}
                             id='bio'
                             placeholder='Bio'
                             required
@@ -130,6 +182,7 @@ function Onboarding() {
                                 />
 
                                 <button
+                                    disabled={loading}
                                     onClick={() => imagePickerRef.current?.click()}
                                     type='button'
                                     className=''
@@ -146,8 +199,21 @@ function Onboarding() {
                                 </button>
                             </div>
 
-                            <button className='animated-btn hover:bg-white hover:text-[#CF0058] border-[1px] border-[#CF0058] bg-[#CF0058] text-white text-[0.75rem] h-[50px] w-[100%] rounded-[30px] '>
-                                NEXT
+                            <button
+                                disabled={loading || !tempDp}
+                                className='animated-btn hover:bg-white hover:text-[#CF0058] border-[1px] border-[#CF0058] bg-[#CF0058] text-white text-[0.75rem] h-[50px] w-[100%] rounded-[30px] '>
+                                {
+                                    loading ?
+                                        <div className="loader ">
+                                            <div></div>
+                                            <div></div>
+                                            <div></div>
+                                            <div></div>
+                                        </div> :
+                                        "COMPLETE"
+                                }
+
+
                             </button>
                         </form>
                 }

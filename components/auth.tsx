@@ -17,6 +17,7 @@ interface IAuth {
     footerLink: string;
     footerLinkText: string;
     rememberMe?: boolean;
+    loading?: boolean;
     setRememberMe?: (remember: boolean) => void;
     isLogin?: boolean;
 }
@@ -28,6 +29,7 @@ function Auth({
     password,
     setPassword,
     title,
+    loading,
     onSubmit,
     subtitle,
     footerLink,
@@ -123,13 +125,22 @@ function Auth({
                         <button
                             type='button'
 
-                            onClick={() => router.push(footerLink)}
+                            onClick={() => router.push('/blogs/forgot-password')}
                             className='text-[#CF0058] font-[700]'>Forgot password</button>
 
                     </div>}
 
-                    <button className='mb-[24px] w-[100%] h-[50px] rounded-[30px] bg-[#CF0058] text-white text-[1rem] font-[700] hover:bg-white hover:scale-[0.94] hover:text-[#CF0058] border-[1px] border-[#CF0058] animated-btn'>
-                        {btnLabel}
+                    <button
+                        disabled={loading}
+                        className='mb-[24px] w-[100%] h-[50px] rounded-[30px] bg-[#CF0058] text-white text-[1rem] font-[700] hover:bg-white hover:scale-[0.94] hover:text-[#CF0058] border-[1px] border-[#CF0058] animated-btn'>
+                        {loading ?
+
+                            <div className="loader ">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div> : btnLabel}
                     </button>
                 </div>
 
@@ -142,7 +153,7 @@ function Auth({
                 {/* SOCIALS */}
                 {
                     signupOptions.map(({ name, label, icon, textColor, bg }, index) => (
-                        <button type='button' key={index} className={`mb-[24px] w-[100%] h-[50px] rounded-[30px]  ${bg} ${textColor} text-[1rem] font-[700] hover:scale-[0.94] border-[1px]  animated-btn flex items-center justify-between px-[47.5px]`}>
+                        <button disabled type='button' key={index} className={`cursor-not-allowed mb-[24px] w-[100%] h-[50px] rounded-[30px]  ${bg} ${textColor} text-[1rem] font-[700] hover:scale-[0.94] border-[1px]  animated-btn flex items-center justify-between px-[47.5px]`}>
                             <Image
                                 src={icon}
                                 alt={name}

@@ -6,14 +6,18 @@ import { useRouter } from 'next/navigation';
 
 import React from 'react';
 
-function SimilarBlog() {
+interface ISimilarBlog {
+    containerClassName?: string;
+    onClick?: () => void
+}
+function SimilarBlog({ containerClassName, onClick }: ISimilarBlog) {
     const router = useRouter()
 
     return (
         <div
-            onClick={() => router.push(`/blogs/${100}`)}
+            onClick={onClick ? onClick : () => router.push(`/blogs/${100}`)}
 
-            className='w-[100%]  cursor-pointer similar-card pb-[22px]'>
+            className={`w-[100%]  pointer similar-card pb-[22px] ${containerClassName}`}>
             <Image
                 src={'/images/more-1.png'}
                 alt='more'

@@ -4,13 +4,10 @@
 
 import axiosInstance from "@/helpers/axios-instance";
 import Image from "next/image";
-import React, { FormEvent, useEffect, useState } from 'react'
+import React, { FormEvent, useState } from 'react'
 import { toast } from "react-toastify";
 
 function Chat() {
-
-
-
 
     const [showChat, setShowChat] = useState(false)
 

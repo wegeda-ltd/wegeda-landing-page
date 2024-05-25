@@ -35,7 +35,9 @@ export default function RootLayout({
         autoClose={2000}
 
       />
-      <body className={quicksand.className}>{children}</body>
+      <body className={quicksand.className}>
+
+        {children}</body>
     </html>
   );
 }
