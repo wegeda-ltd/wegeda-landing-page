@@ -9,8 +9,9 @@ import Image from 'next/image';
 import SimilarBlog from '@/components/similar-blog-card';
 import { useRouter, useSearchParams } from 'next/navigation';
 import DeletePost from '@/components/blog-dashboard/delete-post';
-import { Header } from '../create/page';
+
 import FooterNewsLetter from '@/components/blog-dashboard/footer-newsletter';
+import { Header } from '@/components/blog-dashboard/header';
 
 const socials = [
     { title: 'x.com', icon: '/icons/x.svg' },
