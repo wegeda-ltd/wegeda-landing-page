@@ -1,9 +1,23 @@
-import Image from 'next/image'
-import React from 'react'
+"use client";
 
-function SimilarBlog() {
+
+import Image from 'next/image';
+import { useRouter } from 'next/navigation';
+
+import React from 'react';
+
+interface ISimilarBlog {
+    containerClassName?: string;
+    onClick?: () => void
+}
+function SimilarBlog({ containerClassName, onClick }: ISimilarBlog) {
+    const router = useRouter()
+
     return (
-        <div className='w-[100%]  cursor-pointer similar-card pb-[22px]'>
+        <div
+            onClick={onClick ? onClick : () => router.push(`/blogs/${100}`)}
+
+            className={`w-[100%]  pointer similar-card pb-[22px] ${containerClassName}`}>
             <Image
                 src={'/images/more-1.png'}
                 alt='more'

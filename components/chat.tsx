@@ -4,13 +4,10 @@
 
 import axiosInstance from "@/helpers/axios-instance";
 import Image from "next/image";
-import React, { FormEvent, useEffect, useState } from 'react'
+import React, { FormEvent, useState } from 'react'
 import { toast } from "react-toastify";
 
 function Chat() {
-
-
-
 
     const [showChat, setShowChat] = useState(false)
 
@@ -94,7 +91,7 @@ function Chat() {
                         </div>
                         <div className="form-group flex-1 mt-6 border-[1px]">
                             <input value={phone} onChange={(e) => setPhone(e.target.value)} id="tel" name="tel" type="tel" required />
-                            <label htmlFor="tel">Mobil Phone</label>
+                            <label htmlFor="tel">Mobile Phone</label>
                         </div>
 
                         <div className="form-group flex-1 mt-6 border-[1px]" >

@@ -1,9 +1,16 @@
+"use client";
+
+
 import Footer from '@/components/footer'
 import Navbar from '@/components/navbar'
-import React from 'react'
-import dynamic from "next/dynamic";
+import React, { useEffect, useState } from 'react'
+
 import Image from 'next/image';
 import SimilarBlog from '@/components/similar-blog-card';
+import { useRouter, useSearchParams } from 'next/navigation';
+import DeletePost from '@/components/blog-dashboard/delete-post';
+import { Header } from '../create/page';
+import FooterNewsLetter from '@/components/blog-dashboard/footer-newsletter';
 
 const socials = [
     { title: 'x.com', icon: '/icons/x.svg' },
@@ -24,19 +31,122 @@ const content = `
 `
 
 
+
+
 function BlogDetail() {
+    const [showDeleteModal, setShowDeleteModal] = useState(false)
+    const [dontShow, setDontShow] = useState(false)
+
+
+    const [blog, setBlog] = useState<any>()
+    const [coverImgTempUrl, setCoverImgTempUrl] = useState<any>(null)
+    const router = useRouter()
+    const typeParams = useSearchParams()
+    const [type] = useState(typeParams.get('type'))
+
+    const onDeletePost = () => {
+        setShowDeleteModal(false)
+    }
+    const onCancelDelete = () => {
+        setShowDeleteModal(false)
+    }
+
+    const onSave = () => {
+
+    }
+
+    const onPublish = () => {
+
+    }
+
+    const buttons = [
+        {
+            label: 'Save',
+            action: onSave,
+            extraClasses: 'bg-white border-[1px] border-[#222] text-[#222]',
+        },
+        {
+            label: 'Publish',
+            action: onPublish,
+            extraClasses: 'bg-[#CF0058] border-[1px] border-[#CF0058] text-white',
+        },
+    ]
+
+
+    const previewDp = (image: any) => {
+        if (image) {
+            const reader = new FileReader()
+            reader.onload = (e) => {
+                setCoverImgTempUrl(e.target?.result)
+            }
+            reader.readAsDataURL(image)
+        }
+
+    }
+
+    useEffect(() => {
+
+        let blog: any = localStorage.getItem('@wegeda-preview')
+
+        if (blog) {
+
+            if (blog?.coverImage) {
+                previewDp(blog.coverImage)
+            }
+            setBlog(JSON.parse(blog))
+        }
+    }, [])
+
+    const buttonsActive: () => boolean = () => {
+        return (blog && blog?.title.length && blog?.category?.label?.length && blog?.content.length && blog?.coverImage)
+    }
 
     return (
-        <div className="min-h-[100vh] relative sm:mt-[120px]">
-            <Navbar />
+        <div className="min-h-[100vh] relative sm:mt-[193px]">
+            {type === 'preview' ? <Header title='New post' buttons={buttons} buttonsActive={buttonsActive} /> : <Navbar />}
+            {type === 'user' && <div className='z-[80] bg-white top-[120px] fixed w-[100%] h-[73px] px-24 flex items-center justify-between border-b-[1px]'>
+                <button
+                    onClick={() => router.back()}
+                >
+                    <Image
+                        src={'/icons/more.svg'}
+                        alt='back'
+                        width={24}
+                        height={24}
+                        className='rotate-[-90deg]'
+                    />
+                </button>
+
+                <div className='flex items-center gap-[16px]'>
+                    <button onClick={() => setShowDeleteModal(true)} className='animated-btn hover:scale-[0.95]'>
+                        <Image
+                            src={'/icons/delete.svg'}
+                            alt='delete'
+                            width={24}
+                            height={24}
+                        />
+                    </button>
+
+                    <button className='text-[0.875rem] font-[600] gap-[4px] flex items-center justify-center border-[1px] border-[#222] rounded-[30px] h-[40px] w-[114px] animated-btn hover:scale-[0.95]'>
+                        <Image
+                            src={'/icons/edit.svg'}
+                            alt='edit'
+                            width={24}
+                            height={24}
+                        />
+                        Edit
+                    </button>
+
+                </div>
+            </div>}
             <div className='p-24 pt-[24px]'>
 
                 <header>
-                    <h6 className='font-[600] text-[0.9375rem] text-[#7C7C7C] mb-[12px]'>Product Updates <span className='text-[#000]'>13 Feb 2024</span></h6>
-                    <h2 className='font-[700] text-[3rem] w-[90%] mb-[24px] leading-[60px]'>10 Ways to find your perfect roommate match in Lagos </h2>
+                    <h6 className='font-[600] text-[0.9375rem] text-[#7C7C7C] mb-[12px]'>{type === 'preview' ? blog?.category?.label : 'Product Updates'} <span className='text-[#000]'>13 Feb 2024</span></h6>
+                    <h2 className='font-[700] text-[3rem] w-[90%] mb-[24px] leading-[60px]'>{type === 'preview' ? blog?.title : "10 Ways to find your perfect roommate match in Lagos"} </h2>
 
                     <div className='flex items-center justify-between font-[600] text-[1.125rem]'>
-                        <p className='text-[#A60046]'>Tips for Roommates</p>
+                        <p className='text-[#A60046]'>{type === 'preview' ? blog?.category?.label : 'Product Updates'}</p>
 
                         <div className='flex items-center gap-[40px]'>
                             <p className='underline'>Lukman Bello</p>
@@ -66,7 +176,7 @@ function BlogDetail() {
                             }
                         </div>
                         <Image
-                            src={'/images/blog-details-img.png'}
+                            src={type === 'preview' && coverImgTempUrl ? coverImgTempUrl : '/images/blog-details-img.png'}
                             alt='cover'
                             width={1160}
                             height={600}
@@ -77,102 +187,76 @@ function BlogDetail() {
                     <div className='pl-[72px] pb-[100px]'>
 
                         <div
-                            className='text-[1.25rem]'
+                            className='text-[1.25rem] quill'
                             dangerouslySetInnerHTML={{
-                                __html: content
+                                __html: type === "preview" ? blog?.content : content
                             }}
                         />
                     </div>
 
-                    <div>
-                        <div
-                            className='mb-[24px] flex items-center justify-between font-[600]'
-                        >
+                    {type !== 'preview' && <>
+                        <div>
+                            <div
+                                className='mb-[24px] flex items-center justify-between font-[600]'
+                            >
 
-                            <h4 className='text-[1.4375rem]'>0 comments</h4>
-                            <div className='flex items-center gap-[8px] text-[1rem]'>
-                                <span>Latest</span>
+                                <h4 className='text-[1.4375rem]'>0 comments</h4>
+                                <div className='flex items-center gap-[8px] text-[1rem]'>
+                                    <span>Latest</span>
+                                    <Image
+                                        src={'/icons/sort.svg'}
+                                        alt='sort'
+                                        width={20}
+                                        height={20}
+                                    />
+                                </div>
+                            </div>
+
+                            <div className='flex items-center gap-[32px]'>
                                 <Image
-                                    src={'/icons/sort.svg'}
-                                    alt='sort'
-                                    width={20}
-                                    height={20}
+                                    src={'/icons/commenter-avatar.svg'}
+                                    alt='avatar'
+                                    width={64}
+                                    height={64}
+
+                                />
+
+                                <textarea
+                                    className='w-[100%] h-[64] border-[1px]'
+                                    placeholder='Add a comment...'
                                 />
                             </div>
                         </div>
 
-                        <div className='flex items-center gap-[32px]'>
-                            <Image
-                                src={'/icons/commenter-avatar.svg'}
-                                alt='avatar'
-                                width={64}
-                                height={64}
 
-                            />
+                        {/* MORE BY AUTHOR */}
 
-                            <textarea
-                                className='w-[100%] h-[64] border-[1px]'
-                                placeholder='Add a comment...'
-                            />
-                        </div>
-                    </div>
+                        <div className='my-[100px]'>
 
+                            <div className='flex items-center justify-between mb-[64px]'>
+                                <h3 className='text-[2.25rem] font-[700]'>More by this Author</h3>
 
-                    {/* MORE BY AUTHOR */}
-
-                    <div className='my-[100px]'>
-
-                        <div className='flex items-center justify-between mb-[64px]'>
-                            <h3 className='text-[2.25rem] font-[700]'>More by this Author</h3>
-
-                            <span className='cursor-pointer text-[1rem] font-[600] text-[#CF0058] hover:text-[#A60048] see-all'>See all</span>
-
-                        </div>
-                        <div className='grid grid-cols-3 gap-[32px]'>
-                            {[0, 0, 0].map((_, index) => (
-                                <SimilarBlog key={index} />
-                            ))}
-                        </div>
-                    </div>
-
-
-                    <Image
-                        className="w-[100%] h-auto"
-                        src={'/icons/banner.svg'}
-                        alt="banner"
-                        width={1880}
-                        height={350}
-                    />
-
-
-                    <div className='flex justify-between mt-[100px] px-16'>
-                        <div>
-                            <h3 className='text-[1.875rem] mb-[16px] font-[700]'>Sign up for exclusive updates:</h3>
-                            <p className='text-[1.25rem]'>Stay in the loop with everything you need to know.</p>
-                        </div>
-                        <form className=''>
-                            <div className='flex items-center gap-[16px]'>
-                                <div className='form-group w-[480px] h-[43px] border-[1px]'>
-                                    <input
-                                        className=''
-                                        placeholder='Enter your email'
-                                    />
-                                </div>
-
-                                <button className='rounded-[8px] h-[44px] w-[112px]  animated-btn text-white flex items-center justify-center sm:text-[1rem] text-[0.546875rem] font-[600] bg-[#CF0058] hover:border-[#CF0058] hover:bg-white hover:text-[#CF0058] hover:border-[1px]'>
-                                    Subscribe
-                                </button>
+                                <span className='cursor-pointer text-[1rem] font-[600] text-[#CF0058] hover:text-[#A60048] see-all'>See all</span>
 
                             </div>
+                            <div className='grid grid-cols-3 gap-[32px]'>
+                                {[0, 0, 0].map((_, index) => (
+                                    <SimilarBlog key={index} />
+                                ))}
+                            </div>
+                        </div>
 
-                        </form>
 
 
-                    </div>
+
+                        <FooterNewsLetter />
+                    </>}
                 </main>
             </div>
 
             <Footer />
+
+            {showDeleteModal && <DeletePost onCancel={onCancelDelete} onDelete={onDeletePost} setDontShow={setDontShow} dontShow={dontShow} />}
         </div>
     )
 }

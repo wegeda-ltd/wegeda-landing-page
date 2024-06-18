@@ -1,7 +1,8 @@
 import axios from 'axios';
 
 const axiosInstance = axios.create({
-    baseURL: `https://blog.wegeda.app/api/`,
+    // baseURL: `https://blog.wegeda.app/api/`,
+    baseURL: `http://localhost:4000/api/`,
 
 });
 
@@ -9,7 +10,7 @@ const axiosInstance = axios.create({
 
 axiosInstance.interceptors.request.use(
     (config) => {
-        const accessToken = JSON.parse(localStorage.getItem("@wegeda-token")!);
+        const accessToken = localStorage.getItem("@wegeda-token")!;
 
         if (accessToken) {
             if (config.headers) config.headers.Authorization = `Bearer ${accessToken}`;

@@ -1,6 +1,6 @@
 import React, { Children, ReactNode, useState } from 'react'
 import BlogCard from './blog-card';
-import { NewArray } from '@/utils/generate-array';
+import { NewArray } from '@/utils/format';
 import Image from 'next/image';
 
 interface IPaginate {
