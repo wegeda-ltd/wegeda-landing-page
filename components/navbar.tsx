@@ -111,7 +111,7 @@ function Navbar() {
 
                         <div className='flex items-center gap-[32px]'>
                             <span className={`text-[#222] sm:text-[1rem] text-[0.875rem] font-[600] nav-link`}>
-                                <Link href={'/blog/signin'}>
+                                <Link href={'/blogs/login'}>
                                     Sign in
                                 </Link>
                             </span>

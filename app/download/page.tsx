@@ -15,14 +15,18 @@ function Download() {
             <main className="sm:mt-[120px] mt-[100px] h-[100%]">
                 <div className='flex p-8 overflow-y-hidden sm:flex-row flex-col-reverse'>
 
-                    <div className='flex-[2] sm:h-[575px] relative max-[620px]:w-[100%]  overflow-hidden '>
+                    <div className='flex flex-col items-center flex-[2] sm:h-[575px] relative max-[620px]:w-[100%]  overflow-hidden '>
                         <Image
                             src={'/icons/phones.png'}
                             alt='demo'
                             width={565.47}
                             height={565}
 
-                            className='sm:w-[100%] sm:h-[565px] aspect-square  z-[1] relative self-center sm:ml-[0] ml-[5%]'
+                            className='sm:w-[100%] sm:h-[565px] object-fit  z-[1] relative self-center 2xl:ml-[-15%] sm:ml-[-5%] ml-[12%]'
+                            style={{
+                                height: 'auto',
+                                width: 'auto'
+                            }}
                         />
 
                         <div className='w-[98%] aspect-video overflow-y-hidden self-center sm:mt-[-25%] mt-[-55%] 2xl:ml-[15%] lg:ml-[10%] sm:ml-[10%] ml-[2%]'>
