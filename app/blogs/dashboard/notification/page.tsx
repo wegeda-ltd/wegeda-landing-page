@@ -1,10 +1,12 @@
 import BlogDashboardNav from '@/components/blog-dashboard/navbar'
-import React from 'react'
+import React, { Suspense } from 'react'
 
 function Notification() {
     return (
         <div>
-            <BlogDashboardNav />
+            <Suspense fallback={<div></div>}>
+                <BlogDashboardNav />
+            </Suspense>
         </div>
 
     )
