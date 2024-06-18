@@ -8,7 +8,7 @@ import axiosInstance from '@/helpers/axios-instance';
 import { NewArray } from '@/utils/format'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
-import React, { useEffect, useState } from 'react'
+import React, { Suspense, useEffect, useState } from 'react'
 
 const socials = [
     { title: 'twitter', icon: '/icons/x.svg' },
@@ -62,7 +62,9 @@ function Profile() {
 
     return (
         <div>
-            <BlogDashboardNav />
+            <Suspense fallback={<div></div>}>
+                <BlogDashboardNav />
+            </Suspense>
             <div className='bg-[#FFFAFC] py-[96px] flex items-center justify-center mt-[73px] gap-[26px]'>
 
                 <Image

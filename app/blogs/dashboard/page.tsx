@@ -7,7 +7,7 @@ import SimilarBlog from '@/components/similar-blog-card'
 import { NewArray } from '@/utils/format';
 import Image from 'next/image'
 import { useRouter } from 'next/navigation';
-import React, { useState } from 'react'
+import React, { Suspense, useState } from 'react'
 
 function Dashboard() {
     const router = useRouter()
@@ -41,8 +41,9 @@ function Dashboard() {
     }
     return (
         <div>
-            <BlogDashboardNav />
-
+            <Suspense fallback={<div></div>}>
+                <BlogDashboardNav />
+            </Suspense>
             {myBlogs.length ?
                 <>
 

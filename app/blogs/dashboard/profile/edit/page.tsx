@@ -2,7 +2,7 @@
 
 import BlogDashboardNav from '@/components/blog-dashboard/navbar'
 import Image from 'next/image'
-import React, { useState } from 'react'
+import React, { Suspense, useState } from 'react'
 
 interface IActionBtns {
     onCancel: (type: 'personal' | 'social' | 'password') => void;
@@ -43,7 +43,9 @@ function EditProfile() {
     }
     return (
         <div>
-            <BlogDashboardNav />
+            <Suspense fallback={<div></div>}>
+                <BlogDashboardNav />
+            </Suspense>
             <div className='mt-[73px] py-[48px] flex justify-center px-24'>
                 <div className='w-[640px]'>
                     {/* Personal Info */}
