@@ -1,8 +1,8 @@
 import axios from 'axios';
 
 const axiosInstance = axios.create({
-    // baseURL: `https://blog.wegeda.app/api/`,
-    baseURL: `http://localhost:4000/api/`,
+    // baseURL: `https://304f-102-88-81-99.ngrok-free.app/api/`,
+    baseURL: `https://bitter-sidewalk.pipeops.app/api/`,
 
 });
 
