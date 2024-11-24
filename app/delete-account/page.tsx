@@ -38,15 +38,12 @@ function DeleteAccount() {
 
     const deleteAccount = async () => {
         if (code && id) {
-
-
             try {
                 setDeleting(true)
 
                 const resp = await axiosInstance.delete(`/users?id=${id}&otp=${code}`)
 
                 toast.success(resp.data.message)
-                setEmail('')
                 setDeleting(false)
                 router.push('/')
             } catch (error: any) {
@@ -79,7 +76,15 @@ function DeleteAccount() {
                     <div></div>
                     <div></div>
                 </div>
-            </div> : id && code && !deleting ? <></> :
+            </div> : id && code && !deleting ? <div className='flex items-center deleting'>
+                <h3 className='font-bold text-[#CF0058]'>Redirecting</h3>
+                <div className="loader ">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div> :
                 <form
                     onSubmit={(e) => initiateDeleteAccount(e)}
                     className="bg-white shadow-sm w-[334px] rounded-[8px] max-h-[310px] overflow-hidden show-chat-form">
