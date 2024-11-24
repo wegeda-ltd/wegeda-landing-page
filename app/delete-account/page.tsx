@@ -1,6 +1,7 @@
+import DeleteAccount from '@/components/delete-account'
 import React, { Suspense } from 'react'
 
-function DeleteAccount() {
+function DeleteAccountPage() {
     return (
         <Suspense>
             <DeleteAccount />
@@ -8,4 +9,4 @@ function DeleteAccount() {
     )
 }
 
-export default DeleteAccount
+export default DeleteAccountPage
