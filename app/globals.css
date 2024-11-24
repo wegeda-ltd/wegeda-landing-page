@@ -223,6 +223,10 @@ input:-webkit-autofill:active {
 
 
 /* LOADING INDICATOR */
+.deleting .loader div {
+  background-color: #CF0058;
+  margin-top: 4px;
+}
 
 .loader {
   display: inline-block;
